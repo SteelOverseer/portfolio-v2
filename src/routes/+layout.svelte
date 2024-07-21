@@ -15,7 +15,9 @@
     </nav>
   </div>
 
-  <slot></slot>
+  <div id="content">
+    <slot></slot>
+  </div>
 </div>
 
 
@@ -47,6 +49,18 @@
       }
 
       
+    }
+
+    #content {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 5rem;
+
+      body {
+        width: 100%;
+      }
     }
   }
 </style>

@@ -21,7 +21,7 @@
       </tbody>
     </table>
     <p>
-      While at my desk, my keyboard is a <a href="https://dygma.com/pages/defy">Dygma Defy</a> split keyboard with Cherry MX Brown switches.
+      While at my desk, my keyboard is a <a href="https://dygma.com/pages/defy" target="_blank">Dygma Defy</a> split keyboard with Cherry MX Brown switches.
     </p>
     <h2>Gaming</h2>
     <p>I built my own gaming PC with the following:</p>
@@ -51,17 +51,17 @@
     <h1>Software</h1>
     <hr>
     <p>
-      My development machine runs linux, specifically <a href="https://pop.system76.com/">Pop!_OS</a>
+      My development machine runs linux, specifically <a href="https://pop.system76.com/" target="_blank">Pop!_OS</a>
     </p>
     <h2>Editor/Terminal</h2>
     <li>
       Visual Studio Code with extensions for any of the various programming languages I am working in.
     </li>
     <li>
-      <a href="https://wezfurlong.org/wezterm/index.html">Wezterm</a> gets me more features than the basic terminal, such as tabs or split views.
+      <a href="https://wezfurlong.org/wezterm/index.html" target="_blank">Wezterm</a> gets me more features than the basic terminal, such as tabs or split views.
     </li>
     <li>
-      <a href="https://starship.rs/">Starship</a> to customize my terminal.
+      <a href="https://starship.rs/" target="_blank">Starship</a> to customize my terminal.
       Starship
     </li>
     <li>
@@ -71,16 +71,5 @@
 </div>
 
 <style lang="scss">
-  #uses {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 5rem;
-    
-    body {
-      // font-family: Sentient;
-      width: 100%;
-    }
-  }
+
 </style>
