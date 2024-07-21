@@ -1,8 +1,9 @@
 <h1>Uses</h1>
 <h2>Hardware</h2>
-<h3>Laptop</h3>
-<h4>System76 Lemur Pro</h4>
-My machine for personal development projects.
+<h3>Develeopment</h3>
+<div>
+  System76 Lemur Pro
+</div>
 <ul>
   <li>
     Pop!_OS
@@ -14,6 +15,7 @@ My machine for personal development projects.
     Processor: 13th Gen Intel® Core™ i7-1355U x 12
   </li>
 </ul>
+Dygma Defy split keyboard with Cherry MX Brown switches
 <h3>Desktop</h3>
 The gaming rig.
 <ul>

@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 <h1>Hi, I'm Doug</h1>
 <p>
   I'm a software engineer from Rochester NY.
