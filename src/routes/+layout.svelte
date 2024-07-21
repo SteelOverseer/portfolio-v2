@@ -35,14 +35,18 @@
       flex-direction: column;
       align-items: center;
 
-      a {
-        color: white;
-        font-size: x-large;
+      nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        a {
+          color: white;
+          font-size: x-large;
+        }
       }
 
-      a:not(:last-child) {
-        margin-right: 5rem;
-      }
+      
     }
   }
 </style>
