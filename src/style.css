@@ -3,3 +3,12 @@
 	src: url('/fonts/Sentient-Light.ttf');
 	font-style: light;
 }
+
+hr {
+	border-color: #660033;
+}
+
+a {
+	color: white;
+	font-weight: bold;
+}

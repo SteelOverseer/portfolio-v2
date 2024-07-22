@@ -1,7 +1,7 @@
 <script>
 	export let title
 	export let url
-	export let languages
+	export let technologies
 </script>
 
 <div class="project-card">
@@ -9,18 +9,18 @@
     <a href="{url}" target="_blank">
       {title}
     </a>
-  </strong> - {languages}
+  </strong> - {technologies}
   <hr>
     <slot></slot>
 </div>
 
 <style lang="scss">
   .project-card {
-    border: 2px solid black;
+    border: 3px solid #660033;
     padding: 1rem;
     margin: 1rem;
     border-radius: 1rem;
-    // width: 30rem;
-    max-width: 75%;
+    width: 75%;
+    box-shadow: #000000 6px 2px 8px 0px;
   }
 </style>
