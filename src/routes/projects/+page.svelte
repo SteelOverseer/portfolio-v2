@@ -1,5 +1,10 @@
 <script>
   import ProjectCard from "../ProjectCard.svelte";
+  import timetracker from '$lib/images/timetracker.png'
+  import digitalcookbook from '$lib/images/digitalcookbook_v1.png'
+  import cardfinderoutput from '$lib/images/cardfinderoutput.png'
+  import gameoflife from '$lib/images/gameoflife.png'
+  import gameoflifetui from '$lib/images/gameoflifetui.png'
 </script>
 
 <div id="projects">
@@ -8,6 +13,8 @@
     title={"Time Tracker"}
     url={"https://github.com/SteelOverseer/time-tracker"}
     technologies="Typescript, React"
+    imagePath="{timetracker}"
+    alternate={"Image of time tracker app"}
   >
     <p>
       A project I worked on to familiarize myself with React. I have a need to track my time for contracting work which gave me the idea.
@@ -18,6 +25,8 @@
     title={"Missing Card Finder"} 
     url={"https://github.com/SteelOverseer/missing-card-finder"}
     technologies={"Rust"}
+    imagePath={cardfinderoutput}
+    alternate={"Example output"}
   >
     <p>
       A project I worked on to iterate over my decklists and my collection file and output a list of cards I need to finish my decks.
@@ -33,6 +42,8 @@
     title={"Digital Cookbook"}
     url={"https://github.com/SteelOverseer/digital-cookbook"}
     technologies={"Typescript, Vue, Rust"}
+    imagePath={digitalcookbook}
+    alternate={"Image of digital cookbook app"}
   >
     <p>
       I've never liked having to rifle through loose paper to find a recipe, this is my attempt to digitize them.
@@ -48,6 +59,8 @@
     title={"TUI Game of Life"}
     url={"https://github.com/SteelOverseer/rust_tui_game_of_life"}
     technologies={"Rust"}
+    imagePath={gameoflifetui}
+    alternate={"Game of life TUI"}
   >
     <p>
       I wanted to build a TUI and had a recent interest in Conway's Game of Life.
@@ -60,6 +73,8 @@
     title={"Game of Life"}
     url={"https://github.com/SteelOverseer/game_of_life"}
     technologies={"Rust, WASM"}
+    imagePath={gameoflife}
+    alternate={"Game of life"}
   >
     <p>
       Using Rust and Leptos to build a simple Game of Life implementation for the web. 
