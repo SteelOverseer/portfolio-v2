@@ -13,16 +13,14 @@
     </a>
   </strong> - {technologies}
   <hr>
-    <table>
-      <tr>
-        <td>
-          <img src="{imagePath}" alt="{alternate}" width="300" height="200">
-        </td>
-        <td>
-          <slot></slot>
-        </td>
-      </tr>
-    </table>
+  <div class="card-contents">
+    <div class="image-container">
+      <img class="image" src="{imagePath}" alt="{alternate}" >
+    </div>
+    <div>
+      <slot></slot>
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
@@ -33,5 +31,38 @@
     border-radius: 1rem;
     width: 75%;
     box-shadow: #000000 6px 2px 8px 0px;
+  }
+  .card-contents {
+    display: flex;
+    flex-direction: row;
+  }
+  .image-container {
+    margin-right: 5px;
+  }
+  .image {
+    width: 300px;
+    height: 200px;
+  }
+
+  @media only screen and (max-width: 650px) {
+    .card-contents {
+      flex-direction: column;
+    }
+
+    .image {
+      width: 280px;
+      height: 200px;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .card-contents {
+      flex-direction: column;
+    }
+
+    .image {
+      width: 260px;
+      height: 200px;
+    }
   }
 </style>
