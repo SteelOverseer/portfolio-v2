@@ -71,5 +71,11 @@
 </div>
 
 <style lang="scss">
-  
+  h1 {
+    margin-bottom: 0px;
+  }
+
+  hr {
+    margin-top: 1px;
+  }
 </style>

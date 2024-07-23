@@ -1,5 +1,6 @@
 <script>
   import '../style.css'
+  import { Icon } from '@sveltestrap/sveltestrap'
 </script>
 
 <div id="layout">
@@ -7,6 +8,33 @@
     <h1>
       Douglas Schultz
     </h1>
+    <div id="links">
+      <a href="mailto:doug@dougschultz.dev" target="_blank">
+        <Icon
+          name="envelope"
+          style="{
+            "font-size:30px; color: #660033;"
+          }"
+        />
+      </a>
+      <a href="https://github.com/SteelOverseer" target="_blank">
+        <Icon
+          name="github"
+          style="{
+            "font-size:30px; color: #660033;"
+          }"
+        />
+      </a>
+      <a href="https://www.linkedin.com/in/douglas-schultz-7a9819a7/" target="_blank">
+        <Icon
+          name="linkedin"
+          style="{
+            "font-size:30px; color: #660033;"
+          }"
+        />
+      </a>
+    </div>
+    
     <div id="subtext">
       Full stack software engineer with attention to detail and a passion for learning.
     </div>
@@ -35,10 +63,17 @@
     #header {
       border-bottom: 2px solid #660033;
       width: 100%;
-      height: 11rem;
+      height: 14rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      #links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 8rem;
+      }
 
       #subtext {
         padding: 1rem;
@@ -53,7 +88,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding-bottom: 1rem;
+        
         a {
           font-size: x-large;
         }
