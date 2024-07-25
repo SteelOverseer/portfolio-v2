@@ -658,6 +658,10 @@
   width: 100%;
  }
 
+ #gameplan {
+    width: 80%;
+  }
+
  hr {
   width: 75%;
   margin-left: 0px;

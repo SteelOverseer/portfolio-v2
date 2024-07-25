@@ -9,6 +9,7 @@
   export let planeswalkers
   export let lands
   export let enchantments
+  export let battles
 </script>
 
 <div id="decklist">
@@ -165,6 +166,29 @@
         <img 
           src="{planeswalker.source}"
           alt="{planeswalker.name}"
+        >
+      </Popover>
+      <br>
+    {/each}
+    <br>
+  {/if}
+  {#if battles}
+    <strong>
+      Battles:
+    </strong>
+    <hr>
+    {#each battles as battle}
+      <span id="{battle.id}">
+        {battle.qty} {battle.name}
+      </span>
+      <Popover
+        trigger="hover"
+        placement="right"
+        target="{battle.id}"
+      >
+        <img 
+          src="{battle.source}"
+          alt="{battle.name}"
         >
       </Popover>
       <br>

@@ -1,6 +1,7 @@
 <script>
   import narset from '$lib/images/Narset-MtG-Art.jpg'
   import neheb from '$lib/images/Neheb-the-Eternal-Hour-of-Devastation-MtG-Art.jpg'
+  import urdragon from '$lib/images/The_Ur-Dragon.jpg'
 </script>
 
 <nav id="magic-nav">
@@ -9,6 +10,9 @@
   </a>
   <a href="/magic/neheb">
     <img src="{neheb}" alt="Neheb, the Eternal">
+  </a>
+  <a href="/magic/dragons">
+    <img src="{urdragon}" alt="The Ur-Dragon">
   </a>
 </nav>
 <div id="magic-view">
