@@ -637,6 +637,9 @@
   <h3 style="margin: 0px;">The Gameplan:</h3>
   <hr>
   <p>
+    Take <i>all</i> the turns.
+    <br>
+    <br>
     Narset wants to be on the board as soon as possible, so the deck is filled with fast mana and ways to give her haste.
     <br>
     <br>

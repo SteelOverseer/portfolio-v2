@@ -1,10 +1,14 @@
 <script>
   import narset from '$lib/images/Narset-MtG-Art.jpg'
+  import neheb from '$lib/images/Neheb-the-Eternal-Hour-of-Devastation-MtG-Art.jpg'
 </script>
 
 <nav id="magic-nav">
   <a href="/magic/narset">
     <img src="{narset}" alt="Narset, Enlightened Master">
+  </a>
+  <a href="/magic/neheb">
+    <img src="{neheb}" alt="Neheb, the Eternal">
   </a>
 </nav>
 <div id="magic-view">
