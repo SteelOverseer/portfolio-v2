@@ -530,9 +530,9 @@
 </div>
 
 <style lang="scss">
- #decklist {
-  width: 100%;
- }
+  #decklist {
+    width: 100%;
+  }
  #gameplan {
     width: 80%;
   }
