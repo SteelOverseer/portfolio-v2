@@ -5,7 +5,9 @@
 }
 
 hr {
-	border-color: #660033;
+	border: 1px, solid, #660033;
+	background-color: #660033;
+	height: 3px;
 }
 
 a {

@@ -43,6 +43,7 @@
       <a href="/">About</a>
       <a href="/projects">Projects</a>
       <a href="/uses">Uses</a>
+      <a href="/magic">Library</a>
     </nav>
   </div>
 
@@ -61,7 +62,7 @@
     align-items: center;
     
     #header {
-      border-bottom: 2px solid #660033;
+      border-bottom: 5px solid #660033;
       width: 100%;
       height: 14rem;
       display: flex;

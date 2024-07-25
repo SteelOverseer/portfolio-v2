@@ -1,5 +1,5 @@
 <script>
-  import ProjectCard from "../ProjectCard.svelte";
+  import ProjectCard from "./ProjectCard.svelte";
   import timetracker from '$lib/images/timetracker.png'
   import digitalcookbook from '$lib/images/digitalcookbook_v1.png'
   import cardfinderoutput from '$lib/images/cardfinderoutput.png'
