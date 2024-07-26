@@ -1,30 +1,30 @@
 <script>
   import { Popover } from "@sveltestrap/sveltestrap";
 
-  export let commander
-  export let creatures
-  export let artifacts
-  export let instants
-  export let sorceries
-  export let planeswalkers
-  export let lands
-  export let enchantments
-  export let battles
+  export let commander = null
+  export let creatures = null
+  export let artifacts = null
+  export let instants = null
+  export let sorceries = null
+  export let planeswalkers = null
+  export let lands = null
+  export let enchantments = null
+  export let battles = null
 </script>
 
 <div id="decklist">
-  {#if commander}
+  {#if commander != null}
     <strong>
       Commander:
     </strong>
     <hr>
-      <span id="{commander.id}">
+      <span id="{commander.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {commander.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{commander.id}"
+        target="{commander.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{commander.source}"
@@ -34,19 +34,19 @@
     <br>
     <br>
   {/if}
-  {#if creatures}
+  {#if creatures != null}
     <strong>
       Creatures:
     </strong>
     <hr>
     {#each creatures as creature}
-      <span id="{creature.id}">
+      <span id="{creature.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {creature.qty} {creature.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{creature.id}"
+        target="{creature.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{creature.source}"
@@ -57,19 +57,19 @@
     {/each}
     <br>
   {/if}
-  {#if instants}
+  {#if instants != null}
     <strong>
       Instants:
     </strong>
     <hr>
     {#each instants as instant}
-      <span id="{instant.id}">
+      <span id="{instant.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {instant.qty} {instant.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{instant.id}"
+        target="{instant.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{instant.source}"
@@ -80,19 +80,19 @@
     {/each}
     <br>
   {/if}
-  {#if sorceries}
+  {#if sorceries != null}
     <strong>
       Sorceries:
     </strong>
     <hr>
     {#each sorceries as sorcery}
-      <span id="{sorcery.id}">
+      <span id="{sorcery.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {sorcery.qty} {sorcery.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{sorcery.id}"
+        target="{sorcery.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{sorcery.source}"
@@ -103,19 +103,19 @@
     {/each}
     <br>
   {/if}
-  {#if artifacts}
+  {#if artifacts != null}
     <strong>
       Artifacts:
     </strong>
     <hr>
     {#each artifacts as artifact}
-      <span id="{artifact.id}">
+      <span id="{artifact.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {artifact.qty} {artifact.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{artifact.id}"
+        target="{artifact.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{artifact.source}"
@@ -126,19 +126,19 @@
     {/each}
     <br>
   {/if}
-  {#if enchantments}
+  {#if enchantments != null}
     <strong>
       Enchantments:
     </strong>
     <hr>
     {#each enchantments as enchantment}
-      <span id="{enchantment.id}">
+      <span id="{enchantment.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {enchantment.qty} {enchantment.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{enchantment.id}"
+        target="{enchantment.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{enchantment.source}"
@@ -149,19 +149,19 @@
     {/each}
     <br>
   {/if}
-  {#if planeswalkers}
+  {#if planeswalkers != null}
     <strong>
       Planeswalkers:
     </strong>
     <hr>
     {#each planeswalkers as planeswalker}
-      <span id="{planeswalker.id}">
+      <span id="{planeswalker.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {planeswalker.qty} {planeswalker.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{planeswalker.id}"
+        target="{planeswalker.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{planeswalker.source}"
@@ -172,19 +172,19 @@
     {/each}
     <br>
   {/if}
-  {#if battles}
+  {#if battles != null}
     <strong>
       Battles:
     </strong>
     <hr>
     {#each battles as battle}
-      <span id="{battle.id}">
+      <span id="{battle.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {battle.qty} {battle.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{battle.id}"
+        target="{battle.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{battle.source}"
@@ -195,19 +195,19 @@
     {/each}
     <br>
   {/if}
-  {#if lands}
+  {#if lands != null}
     <strong>
       Lands:
     </strong>
     <hr>
     {#each lands as land}
-      <span id="{land.id}">
+      <span id="{land.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
         {land.qty} {land.name}
       </span>
       <Popover
         trigger="hover"
         placement="right"
-        target="{land.id}"
+        target="{land.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}"
       >
         <img 
           src="{land.source}"

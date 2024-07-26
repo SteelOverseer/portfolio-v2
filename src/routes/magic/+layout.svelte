@@ -2,6 +2,7 @@
   import narset from '$lib/images/Narset-MtG-Art.jpg'
   import neheb from '$lib/images/Neheb-the-Eternal-Hour-of-Devastation-MtG-Art.jpg'
   import urdragon from '$lib/images/The_Ur-Dragon.jpg'
+  import arcades from '$lib/images/Arcades-the-Strategist-Core-Set-2019-MtG-Art.jpg'
 </script>
 
 <nav id="magic-nav">
@@ -14,6 +15,9 @@
   <a href="/magic/dragons">
     <img src="{urdragon}" alt="The Ur-Dragon">
   </a>
+  <a href="/magic/arcades">
+    <img src="{arcades}" alt="Arcades, the Strategist">
+  </a>
 </nav>
 <div id="magic-view">
   <slot></slot>
@@ -23,6 +27,10 @@
   #magic-nav {
     margin-top: 2rem;
     margin-bottom: 2rem;
+   
+    a:not(:last-child) {
+      margin-right: 5px;
+    }
 
     img {
       width: 7rem;
