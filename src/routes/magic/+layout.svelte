@@ -3,6 +3,7 @@
   import neheb from '$lib/images/Neheb-the-Eternal-Hour-of-Devastation-MtG-Art.jpg'
   import urdragon from '$lib/images/The_Ur-Dragon.jpg'
   import arcades from '$lib/images/Arcades-the-Strategist-Core-Set-2019-MtG-Art.jpg'
+  import grandarbiter from '$lib/images/grandarbiter.jpg'
 </script>
 
 <nav id="magic-nav">
@@ -17,6 +18,9 @@
   </a>
   <a href="/magic/arcades">
     <img src="{arcades}" alt="Arcades, the Strategist">
+  </a>
+  <a href="/magic/taxes">
+    <img src="{grandarbiter}" alt="Grand Arbiter Augustin IV">
   </a>
 </nav>
 <div id="magic-view">
