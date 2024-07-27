@@ -4,6 +4,7 @@
   import urdragon from '$lib/images/The_Ur-Dragon.jpg'
   import arcades from '$lib/images/Arcades-the-Strategist-Core-Set-2019-MtG-Art.jpg'
   import grandarbiter from '$lib/images/grandarbiter.jpg'
+  import kwain from '$lib/images/Kwain-Itinerant-Meddler-Commander-Legends-MtG-Art.jpg'
 </script>
 
 <nav id="magic-nav">
@@ -21,6 +22,9 @@
   </a>
   <a href="/magic/taxes">
     <img src="{grandarbiter}" alt="Grand Arbiter Augustin IV">
+  </a>
+  <a href="/magic/grouphug">
+    <img src="{kwain}" alt="Kwain, Itinerant Meddler">
   </a>
 </nav>
 <div id="magic-view">
