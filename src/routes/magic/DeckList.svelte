@@ -41,7 +41,7 @@
     <hr>
     {#each creatures as creature}
       <span id="{creature.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
-        {creature.qty} {creature.name}
+        {creature.quantity} {creature.name}
       </span>
       <Popover
         trigger="hover"
@@ -64,7 +64,7 @@
     <hr>
     {#each instants as instant}
       <span id="{instant.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
-        {instant.qty} {instant.name}
+        {instant.quantity} {instant.name}
       </span>
       <Popover
         trigger="hover"
@@ -87,7 +87,7 @@
     <hr>
     {#each sorceries as sorcery}
       <span id="{sorcery.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
-        {sorcery.qty} {sorcery.name}
+        {sorcery.quantity} {sorcery.name}
       </span>
       <Popover
         trigger="hover"
@@ -110,7 +110,7 @@
     <hr>
     {#each artifacts as artifact}
       <span id="{artifact.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
-        {artifact.qty} {artifact.name}
+        {artifact.quantity} {artifact.name}
       </span>
       <Popover
         trigger="hover"
@@ -133,7 +133,7 @@
     <hr>
     {#each enchantments as enchantment}
       <span id="{enchantment.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
-        {enchantment.qty} {enchantment.name}
+        {enchantment.quantity} {enchantment.name}
       </span>
       <Popover
         trigger="hover"
@@ -156,7 +156,7 @@
     <hr>
     {#each planeswalkers as planeswalker}
       <span id="{planeswalker.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
-        {planeswalker.qty} {planeswalker.name}
+        {planeswalker.quantity} {planeswalker.name}
       </span>
       <Popover
         trigger="hover"
@@ -179,7 +179,7 @@
     <hr>
     {#each battles as battle}
       <span id="{battle.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
-        {battle.qty} {battle.name}
+        {battle.quantity} {battle.name}
       </span>
       <Popover
         trigger="hover"
@@ -202,7 +202,7 @@
     <hr>
     {#each lands as land}
       <span id="{land.name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")}">
-        {land.qty} {land.name}
+        {land.quantity} {land.name}
       </span>
       <Popover
         trigger="hover"

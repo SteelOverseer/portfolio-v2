@@ -1,421 +1,108 @@
 <script>
   import DeckList from "../DeckList.svelte";
+  import cards from "../card-list.json"
 
-  let commander = {
-    name: "Neheb, the Eternal",
-    source: "https://cdn1.mtggoldfish.com/images/gf/Neheb%252C%2Bthe%2BEternal%2B%255BMKC%255D.jpg",
-    qty: 1
-  }
+  let commander = cards["neheb-the-eternal"]
 
   let creatures = [
-    {
-      name: "Dockside Extorsionist",
-      source:"https://cdn1.mtggoldfish.com/images/gf/Dockside%2BExtortionist%2B%255BC19%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Birgi, God of Storytelling",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Birgi%252C%2BGod%2Bof%2BStorytelling%2B%253Cshowcase%253E%2B%255BKHM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Magus of the Moon",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Magus%2Bof%2Bthe%2BMoon%2B%255BTSR%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Magus of the Wheel",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Magus%2Bof%2Bthe%2BWheel%2B%253Cfoil%2Betched%253E%2B%255BCMM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Leyline Tyrant",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Leyline%2BTyrant%2B%255BZNR%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Neheb, Dreadhorde Champion",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Neheb%252C%2BDreadhorde%2BChampion%2B%255BDMC%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Ojer Axonil, Deepest Might",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Ojer%2BAxonil%252C%2BDeepest%2BMight%2B%253Cshowcase%253E%2B%255BLCI%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Solphim, Mayhem Dominus",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Solphim%252C%2BMayhem%2BDominus%2B%253Cshowcase%253E%2B%255BONE%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Tectonic Giant",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Tectonic%2BGiant%2B%255BSCD%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Torbran, Thane of the Red Fell",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Torbran%252C%2BThane%2Bof%2BRed%2BFell%2B%255BELD%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Urabrask",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Urabrask%2B%253Cshowcase%253E%2B%255BMOM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Bonehoard Dracosaur",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Bonehoard%2BDracosaur%2B%253Cborderless%253E%2B%255BLCI%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Heartless Hidetsugu",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Heartless%2BHidetsugu%2B%255BCMM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Knollspone Dragon",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Knollspine%2BDragon%2B%255BGN3%255D.jpg",
-      qty: 1
-    },
+    cards["dockside-extortionist"],
+    cards["birgi-god-of-storytelling"],
+    cards["magus-of-the-moon"],
+    cards["magus-of-the-wheel"],
+    cards["leyline-tyrant"],
+    cards["neheb-dreadhorde-champion"],
+    cards["ojer-axonil-deepest-might"],
+    cards["solphim-mayhem-dominus"],
+    cards["tectonic-giant"],
+    cards["torbran-thane-of-the-red-fell"],
+    cards["urabrask"],
+    cards["bonehoard-dracosaur"],
+    cards["heartless-hidetsugu"],
+    cards["knollspine-dragon"]
   ]
 
   let artifacts = [
-    {
-      name: "Chrome Mox",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Chrome%2BMox%2B%255BMRD%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Everflowing Chalice",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Everflowing%2BChalice%2B%255BMKC%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Jeweled Lotus",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Jeweled%2BLotus%2B%253C418094%253E%2B%255BPRM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Mana Crypt",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Mana%2BCrypt%2B%255BVMA%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Mox Diamond",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Mox%2BDiamond%2B%255BTPR%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Mana Vault",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Mana%2BVault%2B%255BVMA%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Sol Ring",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Sol%2BRing%2B%253C251%253E%2B%255B40K%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Grim Monolith",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Grim%2BMonolith%2B%253C400641%253E%2B%255BPRM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Lightning Greaves",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Lightning%2BGreaves%2B%255BMB1%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Ruby Medallion",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Ruby%2BMedallion%2B%255BMH3%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Cryptolith Fragment",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Cryptolith%2BFragment%2B%255BEMN%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Sword of Fire and Ice",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Sword%2Bof%2BFire%2Band%2BIce%2B%255BDST%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Memory Jar",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Memory%2BJar%2B%255BUL%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Pyromancer's Goggles",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Pyromancer%2527s%2BGoggles%2B%255BC21%255D.jpg",
-      qty: 1
-    },
+    cards["chrome-mox"],
+    cards["everflowing-chalice"],
+    cards["jeweled-lotus"],
+    cards["mana-crypt"],
+    cards["mox-diamond"],
+    cards["mana-vault"],
+    cards["sol-ring"],
+    cards["grim-monolith"],
+    cards["lightning-greaves"],
+    cards["ruby-medallion"],
+    cards["cryptolith-fragment"],
+    cards["sword-of-fire-and-ice"],
+    cards["memory-jar"],
+    cards["pyromancers-goggles"]
   ]
 
   let sorceries = [
-    {
-      name: "Faithless Looting",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Faithless%2BLooting%2B%255BCMM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Gamble",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Gamble%2B%253Cborderless%253E%2B%255BDMR%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Rolling Earthquake",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Rolling%2BEarthquake%2B%255B2XM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Vandalblast",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Vandalblast%2B%253Cborderless%253E%2B%255BCMM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Crackle with Power",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Crackle%2Bwith%2BPower%2B%253Cshowcase%253E%2B%255BOTP%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Flame Rift",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Flame%2BRift%2B%255BMH2%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Jaya's Immolating Inferno",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Jaya%2527s%2BImmolating%2BInferno%2B%253Cprecon%253E%2B%255BCMR%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Acidic Soil",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Acidic%2BSoil%2B%255BUZ%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Jeska's Will",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Jeska%2527s%2BWill%2B%255BMKC%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Slagstorm",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Slagstorm%2B%255BMBS%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Wheel of Fortune",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Wheel%2Bof%2BFortune%2B%255B3ED%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Wheel of Misfortune",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Wheel%2Bof%2BMisfortune%2B%255BCMR%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Fiery Confluence",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Fiery%2BConfluence%2B%255BSCD%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Ignite the Future",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Ignite%2Bthe%2BFuture%2B%255BJ22%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Past in Flames",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Past%2Bin%2BFlames%2B%255B40K%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Seize the Day",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Seize%2Bthe%2BDay%2B%253CSecret%2BLair%2Bx%2BArcane%253E%2B%255BSLD%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Chandra's Ignition",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Chandra%2527s%2BIgnition%2B%255BM3C%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Reforge the Soul",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Reforge%2Bthe%2BSoul%2B%255BAVR%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Insult // Injury",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Insult%2B%252F%252F%2BInjury%2B%255BAKH%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Apex of Power",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Apex%2Bof%2BPower%2B%255BAFC%255D.jpg",
-      qty: 1
-    },
+    cards["faithless-looting"],
+    cards["gamble"],
+    cards["rolling-earthquake"],
+    cards["vandalblast"],
+    cards["crackle-with-power"],
+    cards["flame-rift"],
+    cards["jayas-immolating-inferno"],
+    cards["acidic-soil"],
+    cards["jeskas-will"],
+    cards["slagstorm"],
+    cards["wheel-of-fortune"],
+    cards["wheel-of-misfortune"],
+    cards["fiery-confluence"],
+    cards["ignite-the-future"],
+    cards["past-in-flames"],
+    cards["seize-the-day"],
+    cards["chandras-ignition"],
+    cards["reforge-the-soul"],
+    cards["insult-injury"],
+    cards["apex-of-power"]
   ]
 
   let instants = [
-    {
-      name: "Pyroblast",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Pyroblast%2B%255BICE%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Red Elemental Blast",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Red%2BElemental%2BBlast%2B%255B3ED%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Comet Storm",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Comet%2BStorm%2B%253Cprecon%253E%2B%255BCMR%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Commune with Lava",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Commune%2Bwith%2BLava%2B%255BAFC%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Fork",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Fork%2B%255B3ED%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Price of Progress",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Price%2Bof%2BProgress%2B%255BEMA%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Reverberate",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Reverberate%2B%255B40K%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Tibalt's Trickery",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Tibalt%2527s%2BTrickery%2B%255BKHM%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Chaos Warp",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Chaos%2BWarp%2B%255BOTC%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Deflecting Swat",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Deflecting%2BSwat%2B%255BC20%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Delayed Blast Fireball",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Delayed%2BBlast%2BFireball%2B%253Cextended%253E%2B%255BCLB%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Seething Song",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Seething%2BSong%2B%255B9ED%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Valakut Awakening",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Valakut%2BAwakening%2B%255BZNR%255D.jpg",
-      qty: 1
-    },
+    cards["pyroblast"],
+    cards["red-elemental-blast"],
+    cards["comet-storm"],
+    cards["commune-with-lava"],
+    cards["fork"],
+    cards["price-of-progress"],
+    cards["reverberate"],
+    cards["tibalts-trickery"],
+    cards["chaos-warp"],
+    cards["deflecting-swat"],
+    cards["delayed-blast-fireball"],
+    cards["seething-song"],
+    cards["valakut-awakening"]
   ]
 
   let enchantments = [
-    {
-      name: "Underworld Breach",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Underworld%2BBreach%2B%255BTHB%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Virtue of Courage",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Virtue%2Bof%2BCourage%2B%253Cshowcase%253E%2B%255BWOE%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Aggravated Assault",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Aggravated%2BAssault%2B%255BWOT%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Blood Moon",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Blood%2BMoon%2B%255BMM3%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Repercussion",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Repercussion%2B%253Cborderless%2BAnime%253E%2B%255BWOT%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Pyrohemia",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Pyrohemia%2B%255BPLC%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Fiery Emancipation",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Fiery%2BEmancipation%2B%255BWOT%255D.jpg",
-      qty: 1
-    },
+    cards["underworld-breach"],
+    cards["virtue-of-courage"],
+    cards["aggravated-assault"],
+    cards["blood-moon"],
+    cards["repercussion"],
+    cards["pyrohemia"],
+    cards["fiery-emancipation"]
   ]
   
   let planeswalkers = [
-    {
-      name: "Chandra, Torch of Defiance",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Chandra%252C%2BTorch%2Bof%2BDefiance%2B%255BCMM%255D.jpg",
-      qty: 1
-    },
+    cards["chandra-torch-of-defiance"]
   ]
 
+  let snowCoveredMountain = cards["snow-covered-mountain"];
+  snowCoveredMountain.quantity = 22;
   let lands = [
-    {
-      name: "Ancient Tomb",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Ancient%2BTomb%2B%255BPLIST%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Arid Mesa",
-      source:"https://cdn1.mtggoldfish.com/images/gf/Arid%2BMesa%2B%255BZEN%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Bloodstained Mire",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Bloodstained%2BMire%2B%255BMH3%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Nykthos, Shrine to Nyx",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Nykthos%252C%2BShrine%2Bto%2BNyx%2B%255BTHS%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Prismatic Vista",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Prismatic%2BVista%2B%255BMH1%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Scalding Tarn",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Scalding%2BTarn%2B%255BMH2%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Snow-Covered Mountain",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Snow-Covered%2BMountain%2B%253C283%253E%2B%255BKHM%255D.jpg",
-      qty: 22
-    },
-    {
-      name: "Valakut, the Molten Pinnacle",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Valakut%252C%2Bthe%2BMolten%2BPinnacle%2B%255BZEN%255D.jpg",
-      qty: 1
-    },
-    {
-      name: "Wooded Foothills",
-      source: "https://cdn1.mtggoldfish.com/images/gf/Wooded%2BFoothills%2B%255BMH3%255D.jpg",
-      qty: 1
-    },
+    cards["ancient-tomb"],
+    cards["arid-mesa"],
+    cards["bloodstained-mire"],
+    cards["nykthos-shrine-to-nyx"],
+    cards["prismatic-vista"],
+    cards["scalding-tarn"],
+    snowCoveredMountain,
+    cards["valakut-the-molten-pinnacle"],
+    cards["wooded-foothills"]
   ]
 </script>
 
