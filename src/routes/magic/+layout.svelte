@@ -7,6 +7,7 @@
   import kwain from '$lib/images/Kwain-Itinerant-Meddler-Commander-Legends-MtG-Art.jpg'
   import chatterfang from '$lib/images/Chatterfang-Squirrel-General-Modern-Horizons-2-MtG-Art.jpg'
   import tasha from '$lib/images/Tasha-the-Witch-Queen-Battle-for-Baldurs-Gate-MtG-Art.jpg'
+  import jhoira from '$lib/images/Jhoira-of-the-Ghitu-Duel-Decks-Mind-vs.-Might-MtG-Art.jpg'
 </script>
 
 <nav id="magic-nav">
@@ -33,6 +34,9 @@
   </a>
   <a href="/magic/tasha">
     <img src="{tasha}" alt="Tasha, the Witch Queen">
+  </a>
+  <a href="/magic/jhoira">
+    <img src="{jhoira}" alt="Jhoira of the Ghitu">
   </a>
 </nav>
 <div id="magic-view">
@@ -62,6 +66,9 @@
   }
 
   @media only screen and (max-width: 800px) {
+    #magic-nav {
+      width: 15rem;
+    }
     #magic-view {     
       flex-direction: column-reverse;
     }
