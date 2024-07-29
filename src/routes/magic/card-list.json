@@ -69,6 +69,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Ancient%2BTomb%2B%255BPLIST%255D.jpg",
     "quantity": 1
   },
+  "animate-dead": {
+    "name": "Animate Dead",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Animate%2BDead%2B%255B4ED%255D.jpg",
+    "quantity": 1
+  },
   "anguished-unmaking": {
     "name": "Anguished Unmaking",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Anguished%2BUnmaking%2B%253Cextended%253E%2B%255BPIP%255D.jpg",
@@ -94,6 +99,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Arcane%2BDenial%2B%253CB%253E%2B%255BALL%255D.jpg",
     "quantity": 1
   },
+  "arcane-heist": {
+    "name": "Arcane Heist",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Arcane%2BHeist%2B%253Cextended%253E%2B%255BOTC%255D.jpg",
+    "quantity": 1
+  },
   "arcane-signet": {
     "name": "Arcane Signet",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Arcane%2BSignet%2B%255BCMM%255D.jpg",
@@ -117,6 +127,11 @@
   "armageddon": {
     "name": "Armageddon",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Armageddon%2B%255BS99%255D.jpg",
+    "quantity": 1
+  },
+  "ashiok-nightmare-muse": {
+    "name": "Ashiok, Nightmare Muse",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Ashiok%252C%2BNightmare%2BMuse%2B%253Cborderless%253E%2B%255BTHB%255D.jpg",
     "quantity": 1
   },
   "ashnods-altar": {
@@ -274,6 +289,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Bountiful%2BPromenade%2B%255BCLB%255D.jpg",
     "quantity": 1
   },
+  "brainstealer-dragon": {
+    "name": "Brainstealer Dragon",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Brainstealer%2BDragon%2B%255BOTC%255D.jpg",
+    "quantity": 1
+  },
   "brainstorm": {
     "name": "Brainstorm",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Brainstorm%2B%255BC15%255D.jpg",
@@ -287,6 +307,16 @@
   "breeding-pool": {
     "name": "Breeding Pool",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Breeding%2BPool%2B%255BRVR%255D.jpg",
+    "quantity": 1
+  },
+  "bribery": {
+    "name": "Bribery",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Bribery%2B%253Cfoil%2Betched%253E%2B%255BCMM%255D.jpg",
+    "quantity": 1
+  },
+  "cabal-coffers": {
+    "name": "Cabal Coffers",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Cabal%2BCoffers%2B%255BMH2%255D.jpg",
     "quantity": 1
   },
   "carven-caryatid": {
@@ -317,6 +347,11 @@
   "chandra-torch-of-defiance": {
     "name": "Chandra, Torch of Defiance",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Chandra%252C%2BTorch%2Bof%2BDefiance%2B%255BCMM%255D.jpg",
+    "quantity": 1
+  },
+  "chaos-wand": {
+    "name": "Chaos Wand",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Chaos%2BWand%2B%255BOTC%255D.jpg",
     "quantity": 1
   },
   "chaos-warp": {
@@ -409,6 +444,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Court%2Bof%2BArdenvale%2B%255BWOC%255D.jpg",
     "quantity": 1
   },
+  "court-of-locthwain": {
+    "name": "Court of Locthwain",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Court%2Bof%2BLocthwain%2B%253Cextended%253E%2B%255BWOC%255D.jpg",
+    "quantity": 1
+  },
   "crackle-with-power": {
     "name": "Crackle with Power",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Crackle%2Bwith%2BPower%2B%253Cshowcase%253E%2B%255BOTP%255D.jpg",
@@ -454,6 +494,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Crystal%2BVein%2B%255BMI%255D.jpg",
     "quantity": 1
   },
+  "cunning-rhetoric": {
+    "name": "Cunning Rhetoric",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Cunning%2BRhetoric%2B%255BOTC%255D.jpg",
+    "quantity": 1
+  },
   "cursed-totem": {
     "name": "Cursed Totem",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Cursed%2BTotem%2B%255BMH2%255D.jpg",
@@ -464,14 +509,29 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Cyclonic%2BRift%2B%255BRTR%255D.jpg",
     "quantity": 1
   },
+  "damnation": {
+    "name": "Damnation",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Damnation%2B%255BMM3%255D.jpg",
+    "quantity": 1
+  },
   "darkbore-pathway": {
     "name": "Darkbore Pathway",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Darkbore%2BPathway%2B%255BKHM%255D.jpg",
     "quantity": 1
   },
+  "dark-ritual": {
+    "name": "Dark Ritual",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Dark%2BRitual%2B%255B5ED%255D.jpg",
+    "quantity": 1
+  },
   "dauntless-dismantler": {
     "name": "Dauntless Dismantler",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Dauntless%2BDismantler%2B%255BLCI%255D.jpg",
+    "quantity": 1
+  },
+  "dauthi-voidwalker": {
+    "name": "Dauthi Voidwalker",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Dauthi%2BVoidwalker%2B%255BMH2%255D.jpg",
     "quantity": 1
   },
   "days-undoing": {
@@ -529,9 +589,24 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Dictate%2Bof%2BKruphix%2B%255BJOU%255D.jpg",
     "quantity": 1
   },
+  "diluvian-primordial": {
+    "name": "Diluvian Primordial",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Diluvian%2BPrimordial%2B%255BOTC%255D.jpg",
+    "quantity": 1
+  },
+  "dimir-signet": {
+    "name": "Dimir Signet",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Dimir%2BSignet%2B%255BMKC%255D.jpg",
+    "quantity": 1
+  },
   "disallow": {
     "name": "Disallow",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Disallow%2B%255BAER%255D.jpg",
+    "quantity": 1
+  },
+  "displacer-kitten": {
+    "name": "Displacer Kitten",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Displacer%2BKitten%2B%255BCLB%255D.jpg",
     "quantity": 1
   },
   "dissipate": {
@@ -599,6 +674,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Drift%2Bof%2BPhantasms%2B%253Cretro%253E%2B%255BRVR%255D.jpg",
     "quantity": 1
   },
+  "drown-in-the-loch": {
+    "name": "Drown in the Loch",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Drown%2Bin%2Bthe%2BLoch%2B%255BELD%255D.jpg",
+    "quantity": 1
+  },
   "dusk-dawn": {
     "name": " Dusk // Dawn",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Dusk%2B%252F%252F%2BDawn%2B%255BMKC%255D.jpg",
@@ -612,6 +692,11 @@
   "eerie-interlude": {
     "name": "Eerie Interlude",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Eerie%2BInterlude%2B%255BSOI%255D.jpg",
+    "quantity": 1
+  },
+  "elder-brain": {
+    "name": "Elder Brain",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Elder%2BBrain%2B%253Cextended%253E%2B%255BCLB%255D.jpg",
     "quantity": 1
   },
   "eldrazi-conscription": {
@@ -672,6 +757,11 @@
   "fell-the-mighty": {
     "name": "Fell the Mighty",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Fell%2Bthe%2BMighty%2B%255BMKC%255D.jpg",
+    "quantity": 1
+  },
+  "fellwar-stone": {
+    "name": "Fellwar Stone",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Fellwar%2BStone%2B%255BBLC%255D.jpg",
     "quantity": 1
   },
   "fierce-guardianship": {
@@ -769,6 +859,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Fork%2B%255B3ED%255D.jpg",
     "quantity": 1
   },
+  "fractured-sanity": {
+    "name": "Fractured Sanity",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Fractured%2BSanity%2B%253Cshowcase%253E%2B%255BMH2%255D.jpg",
+    "quantity": 1
+  },
   "fury-of-the-horde": {
     "name": "Fury of the Horde",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Fury%2Bof%2Bthe%2BHorde%2B%255BCSP%255D.jpg",
@@ -819,6 +914,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Gilded%2BLotus%2B%255BBLC%255D.jpg",
     "quantity": 1
   },
+  "gix-yawgmoth-praetor": {
+    "name": "Gix, Yawgmoth Praetor",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Gix%252C%2BYawgmoth%2BPraetor%2B%255BBRO%255D.jpg",
+    "quantity": 1
+  },
   "glacial-fortress": {
     "name": "Glacial Fortress",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Glacial%2BFortress%2B%255BBLC%255D.jpg",
@@ -839,6 +939,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/God-Pharaoh%2527s%2BStatue%2B%255BWAR%255D.jpg",
     "quantity": 1
   },
+  "gonti-lord-of-luxury": {
+    "name": "Gonti, Lord of Luxury",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Gonti%252C%2BLord%2Bof%2BLuxury%2B%255BCLB%255D.jpg",
+    "quantity": 1
+  },
   "grand-abolisher": {
     "name": "Grand Abolisher",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Grand%2BAbolisher%2B%255BBIG%255D.jpg",
@@ -852,6 +957,11 @@
   "grave-pact": {
     "name": "Grave Pact",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Grave%2BPact%2B%255BCMM%255D.jpg",
+    "quantity": 1
+  },
+  "grima-sarumans-footman": {
+    "name": "Grima, Saruman's Footman",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Grima%252C%2BSaruman%2527s%2BFootman%2B%255BLTC%255D.jpg",
     "quantity": 1
   },
   "grim-monolith": {
@@ -874,9 +984,19 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Hallowed%2BFountain%2B%255BRNA%255D.jpg",
     "quantity": 1
   },
+  "halo-forager": {
+    "name": "Halo Forager",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Halo%2BForager%2B%255BMOM%255D.jpg",
+    "quantity": 1
+  },
   "haven-of-the-spirit-dragon": {
     "name": "Haven of the Spirit Dragon",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Haven%2Bof%2Bthe%2BSpirit%2BDragon%2B%255BSCD%255D.jpg",
+    "quantity": 1
+  },
+  "heartless-conscription": {
+    "name": "Heartless Conscription",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Heartless%2BConscription%2B%253Cextended%253E%2B%255BOTC%255D.jpg",
     "quantity": 1
   },
   "heartless-hidetsugu": {
@@ -924,6 +1044,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Hinterland%2BHarbor%2B%255BBLC%255D.jpg",
     "quantity": 1
   },
+  "hostage-taker": {
+    "name": "Hostage Taker",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Hostage%2BTaker%2B%255BLCC%255D.jpg",
+    "quantity": 1
+  },
   "hover-barrier": {
     "name": "Hover Barrier",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Hover%2BBarrier%2B%255BRTR%255D.jpg",
@@ -947,6 +1072,11 @@
   "insult-injury": {
     "name": "Insult // Injury",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Insult%2B%252F%252F%2BInjury%2B%255BAKH%255D.jpg",
+    "quantity": 1
+  },
+  "intellect-devourer": {
+    "name": "Intellect Devourer",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Intellect%2BDevourer%2B%253Cextended%253E%2B%255BCLB%255D.jpg",
     "quantity": 1
   },
   "invasion-of-tarkir": {
@@ -1029,6 +1159,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Karn%2527s%2BTemporal%2BSundering%2B%255BDOM%255D.jpg",
     "quantity": 1
   },
+  "king-narfis-betrayal": {
+    "name": "King Narfi's Betrayal",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/King%2BNarfi%2527s%2BBetrayal%2B%255BLCC%255D.jpg",
+    "quantity": 1
+  },
   "klauth-unriveled-ancient": {
     "name": "Klauth, Unrivaled Ancient",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Klauth%252C%2BUnrivaled%2BAncient%2B%255BAFC%255D.jpg",
@@ -1084,6 +1219,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Liliana%252C%2BDreadhorde%2BGeneral%2B%255BRVR%255D.jpg",
     "quantity": 1
   },
+  "lilianas-talent": {
+    "name": "Liliana's Talent",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Liliana%2527s%2BTalent%2B%255BMOC%255D.jpg",
+    "quantity": 1
+  },
   "linvala-keeper-of-silence": {
     "name": "Linvala, Keeper of Silence",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Linvala%252C%2BKeeper%2Bof%2BSilence%2B%255BJMP%255D.jpg",
@@ -1107,6 +1247,11 @@
   "lotus-petal": {
     "name": "Lotus Petal",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Lotus%2BPetal%2B%255BTPR%255D.jpg",
+    "quantity": 1
+  },
+  "maddening-cacophony": {
+    "name": "Maddening Cacophony",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Maddening%2BCacophony%2B%255BZNR%255D.jpg",
     "quantity": 1
   },
   "magus-of-the-moon": {
@@ -1164,6 +1309,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Memory%2BJar%2B%255BUL%255D.jpg",
     "quantity": 1
   },
+  "memory-plunder": {
+    "name": "Memory Plunder",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Memory%2BPlunder%2B%255BC17%255D.jpg",
+    "quantity": 1
+  },
   "miirym-sentinel-wyrm": {
     "name": "Miirym, Sentinel Wyrm",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Miirym%252C%2BSentinel%2BWyrm%2B%253Cfoil%2Betched%253E%2B%255BCLB%255D.jpg",
@@ -1184,9 +1334,24 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Minds%2BAglow%2B%255BCMM%255D.jpg",
     "quantity": 1
   },
+  "minds-dilation": {
+    "name": "Mind's Dilation",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Mind%2527s%2BDilation%2B%255BOTC%255D.jpg",
+    "quantity": 1
+  },
   "misty-rainforest": {
     "name": "Misty Rainforest",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Misty%2BRainforest%2B%255BMH2%255D.jpg",
+    "quantity": 1
+  },
+  "mnemonic-betrayal": {
+    "name": "Mnemonic Betrayal",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Mnemonic%2BBetrayal%2B%255BGRN%255D.jpg",
+    "quantity": 1
+  },
+  "morphic-pool": {
+    "name": "Morphic Pool",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Morphic%2BPool%2B%255BCLB%255D.jpg",
     "quantity": 1
   },
   "mox-diamond": {
@@ -1244,6 +1409,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Narset%2527s%2BReversal%2B%255BWAR%255D.jpg",
     "quantity": 1
   },
+  "nashi-moon-sages-scion": {
+    "name": "Nashi, Moon Sage's Scion",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Nashi%252C%2BMoon%2BSage%2527s%2BScion%2B%255BOTC%255D.jpg",
+    "quantity": 1
+  },
   "natural-order": {
     "name": "Natural Order",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Natural%2BOrder%2B%253Cjapanese%253E%2B%255BSTA%255D.jpg",
@@ -1272,6 +1442,11 @@
   "nexus-of-fate": {
     "name": "Nexus of Fate",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Nexus%2Bof%2BFate%2B%255BM19%255D.jpg",
+    "quantity": 1
+  },
+  "nightveil-specter": {
+    "name": "Nightveil Specter",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Nightveil%2BSpecter%2B%255BGK1%255D.jpg",
     "quantity": 1
   },
   "nissa-ascended-animist": {
@@ -1319,6 +1494,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/One%2Bwith%2Bthe%2BMultiverse%2B%255BBRO%255D.jpg",
     "quantity": 1
   },
+  "opposition-agent": {
+    "name": "Opposition Agent",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Opposition%2BAgent%2B%255BCMR%255D.jpg",
+    "quantity": 1
+  },
   "otawara-soaring-city": {
     "name": "Otawara, Soaring City",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Otawara%252C%2BSoaring%2BCity%2B%255BNEO%255D.jpg",
@@ -1327,6 +1507,11 @@
   "otherworld-atlas": {
     "name": "Otherworld Atlas",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Otherworld%2BAtlas%2B%255BAVR%255D.jpg",
+    "quantity": 1
+  },
+  "outrageous-robbery": {
+    "name": "Outrageous Robbery",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Outrageous%2BRobbery%2B%255BMKM%255D.jpg",
     "quantity": 1
   },
   "overgrown-battlement": {
@@ -1424,6 +1609,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Ponder%2B%255BWHO%255D.jpg",
     "quantity": 1
   },
+  "praetors-grasp": {
+    "name": "Praetor's Grasp",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Praetor%2527s%2BGrasp%2B%255BNPH%255D.jpg",
+    "quantity": 1
+  },
   "prahv-spires-of-order": {
     "name": "Prahv, Spires of Order",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Prahv%252C%2BSpires%2Bof%2BOrder%2B%255BDIS%255D.jpg",
@@ -1497,6 +1687,11 @@
   "ravenous-squirrel": {
     "name": "Ravenous Squirrel",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Ravenous%2BSquirrel%2B%253Cshowcase%253E%2B%255BMH2%255D.jpg",
+    "quantity": 1
+  },
+  "reanimate": {
+    "name": "Reanimate",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Reanimate%2B%253Cshowcase%253E%2B%255BOTP%255D.jpg",
     "quantity": 1
   },
   "red-elemental-blast": {
@@ -1739,6 +1934,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Simian%2BSpirit%2BGuide%2B%255BTSR%255D.jpg",
     "quantity": 1
   },
+  "siphon-insight": {
+    "name": "Siphon Insight",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Siphon%2BInsight%2B%255BOTC%255D.jpg",
+    "quantity": 1
+  },
   "sivitri-dragon-master": {
     "name": "Sivitri Dragon Master",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Sivitri%252C%2BDragon%2BMaster%2B%255BDMC%255D.jpg",
@@ -1864,6 +2064,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Steely%2BResolve%2B%255BONS%255D.jpg",
     "quantity": 1
   },
+  "stolen-goods": {
+    "name": "Stolen Goods",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Stolen%2BGoods%2B%255BOTC%255D.jpg",
+    "quantity": 1
+  },
   "stomping-ground": {
     "name": "Stomping Ground",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Stomping%2BGround%2B%255BGTC%255D.jpg",
@@ -1949,9 +2154,24 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Taiga%2B%255B3ED%255D.jpg",
     "quantity": 1
   },
+  "talent-of-the-telepath": {
+    "name": "Talent of the Telepath",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Talent%2Bof%2Bthe%2BTelepath%2B%255BORI%255D.jpg",
+    "quantity": 1
+  },
+  "talisman-of-dominance": {
+    "name": "Talisman of Dominance",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Talisman%2Bof%2BDominance%2B%253C255%253E%2B%255B40K%255D.jpg",
+    "quantity": 1
+  },
   "talisman-of-progress": {
     "name": "Talisman of Progress",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Talisman%2Bof%2BProgress%2B%255BM3C%255D.jpg",
+    "quantity": 1
+  },
+  "tasha-the-witch-queen": {
+    "name": "Tasha, the Witch Queen",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Tasha%252C%2Bthe%2BWitch%2BQueen%2B%255BCLB%255D.jpg",
     "quantity": 1
   },
   "tectonic-giant": {
@@ -2044,6 +2264,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Tezzeret%2Bthe%2BSeeker%2B%253COutlaw%2BAnthology%2BVolume%2B1%253A%2BRebellious%2BRenegades%253E%2B%255BSLD%255D.jpg",
     "quantity": 1
   },
+  "thada-adel-acquisitor": {
+    "name": "Thada Adel, Acquisitor",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Thada%2BAdel%252C%2BAcquisitor%2B%255BWWK%255D.jpg",
+    "quantity": 1
+  },
   "thalia-guardian-of-thraben": {
     "name": "Thalia, Guardian of Thraben",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Thalia%252C%2BGuardian%2Bof%2BThraben%2B%253Cshowcase%253E%2B%255BVOW%255D.jpg",
@@ -2062,6 +2287,11 @@
   "the-great-henge": {
     "name": "The Great Henge",
     "source": "https://cdn1.mtggoldfish.com/images/gf/The%2BGreat%2BHenge%2B%255BCMM%255D.jpg",
+    "quantity": 1
+  },
+  "thief-of-sanity": {
+    "name": "Thief of Sanity",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Thief%2Bof%2BSanity%2B%255BOTC%255D.jpg",
     "quantity": 1
   },
   "the-meathook-massacre": {
@@ -2144,6 +2374,11 @@
     "source": "https://cdn1.mtggoldfish.com/images/gf/Tower%2BDefense%2B%255BGTC%255D.jpg",
     "quantity": 1
   },
+  "toxic-deluge": {
+    "name": "Toxic Deluge",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Toxic%2BDeluge%2B%255BMH3%255D.jpg",
+    "quantity": 1
+  },
   "training-center": {
     "name": "Training Center",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Training%2BCenter%2B%255BCMM%255D.jpg",
@@ -2152,6 +2387,11 @@
   "transmute-artifact": {
     "name": "Transmute Artifact",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Transmute%2BArtifact%2B%255BATQ%255D.jpg",
+    "quantity": 1
+  },
+  "treachery": {
+    "name": "Treachery",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Treachery%2B%255BUD%255D.jpg",
     "quantity": 1
   },
   "tree-of-redemption": {
@@ -2447,6 +2687,11 @@
   "worldly-tutor": {
     "name": "Worldly Tutor",
     "source": "https://cdn1.mtggoldfish.com/images/gf/Worldly%2BTutor%2B%253Cretro%253E%2B%255BDMR%255D.jpg",
+    "quantity": 1
+  },
+  "xanathar-guild-kingpin": {
+    "name": "Xanathar, Guild Kingpin",
+    "source": "https://cdn1.mtggoldfish.com/images/gf/Xanathar%252C%2BGuild%2BKingpin%2B%255BAFR%255D.jpg",
     "quantity": 1
   },
   "yavimaya-hollow": {

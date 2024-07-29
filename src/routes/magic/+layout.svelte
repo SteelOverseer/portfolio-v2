@@ -6,6 +6,7 @@
   import grandarbiter from '$lib/images/grandarbiter.jpg'
   import kwain from '$lib/images/Kwain-Itinerant-Meddler-Commander-Legends-MtG-Art.jpg'
   import chatterfang from '$lib/images/Chatterfang-Squirrel-General-Modern-Horizons-2-MtG-Art.jpg'
+  import tasha from '$lib/images/Tasha-the-Witch-Queen-Battle-for-Baldurs-Gate-MtG-Art.jpg'
 </script>
 
 <nav id="magic-nav">
@@ -29,6 +30,9 @@
   </a>
   <a href="/magic/squirrels">
     <img src="{chatterfang}" alt="Chatterfang, Squirrel General">
+  </a>
+  <a href="/magic/tasha">
+    <img src="{tasha}" alt="Tasha, the Witch Queen">
   </a>
 </nav>
 <div id="magic-view">
