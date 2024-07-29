@@ -65,9 +65,9 @@
     justify-content: space-evenly;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 750px) {
     #magic-nav {
-      width: 15rem;
+      width: 22.5rem;
     }
     #magic-view {     
       flex-direction: column-reverse;

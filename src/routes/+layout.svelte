@@ -36,7 +36,7 @@
     </div>
     
     <div id="subtext">
-      Full stack software engineer with attention to detail and a passion for learning.
+      Full stack software engineer with a passion for learning.
     </div>
   
     <nav>
