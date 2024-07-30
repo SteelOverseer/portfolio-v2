@@ -14,7 +14,7 @@
         <br><br>
         By day, I work full time as a full stack software engineer for a local billing company.
         <br>
-        By night, I contract on the side for a friend who is starting his own tech company <a href="https://roctechworks.com/#/" target="_blank">roctechworks</a>.
+        By night, I contract on the side for a friend who is starting his own tech company, <a href="https://roctechworks.com/#/" target="_blank">roctechworks</a>.
         <br>
       </p>
 
@@ -36,36 +36,6 @@
       If it's not video games, its magic cards. I enjoy collecting and playing Magic: the Gathering and meet with my friends weekly to terrorize them with a new brew.
       <br>
       <br>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        <!-- from Rochester NY, writing code profesionally since 2018.
-        <br><br>
-        In 2015 I received my degree in Computer Science from SUNY Brockport, and soon after landed my first job at a local startup as a QA Analyst.
-        After a couple years, when an opportunity presented itself, I was able to move into a software engineering role.
-        <br><br>
-        Currently, I am employed by a different local company and contract on the side to help a friends start up.
-        <br><br>
-        While I'm not working, I like to try to build projects in technologies that I have taken an interest in. 
-        Check out my <a href="https://github.com/SteelOverseer" target="_blank">Github</a> or visit my Projects page to take a look at what I've been building!
-        <br><br>
-        When learning even seems like too much work, I fire up the gaming rig and play some video games. 
-        
-        <br><br>
-        Other than gaming, I enjoy many different hobbies my favorite of which is collecting and playing Magic: the Gathering.
-        I currently have 14 built commander decks and a handful of modern decks and play with my friends almost weekly.
-        <br><br> -->
     </div>
   </body>
 </div>

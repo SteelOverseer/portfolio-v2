@@ -8,6 +8,7 @@
   import chatterfang from '$lib/images/Chatterfang-Squirrel-General-Modern-Horizons-2-MtG-Art.jpg'
   import tasha from '$lib/images/Tasha-the-Witch-Queen-Battle-for-Baldurs-Gate-MtG-Art.jpg'
   import jhoira from '$lib/images/Jhoira-of-the-Ghitu-Duel-Decks-Mind-vs.-Might-MtG-Art.jpg'
+  import linsivvi from '$lib/images/Sivvi.jpg'
 </script>
 
 <nav id="magic-nav">
@@ -37,6 +38,9 @@
   </a>
   <a href="/magic/jhoira">
     <img src="{jhoira}" alt="Jhoira of the Ghitu">
+  </a>
+  <a href="/magic/rebels">
+    <img src="{linsivvi}" alt="Lin Sivvi, Defiant Hero">
   </a>
 </nav>
 <div id="magic-view">

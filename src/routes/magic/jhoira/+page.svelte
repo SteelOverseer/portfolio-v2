@@ -130,7 +130,7 @@
   <h3 style="margin: 0px;">The Gameplan:</h3>
   <hr>
   <p>
-    Big creature go <i>brrrrrr</i>.
+    What turn is it again?
     <br>
     <br>
     Jhoira wants to be on the board as soon as possible with some mana to spare.
