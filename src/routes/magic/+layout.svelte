@@ -10,6 +10,9 @@
   import jhoira from '$lib/images/Jhoira-of-the-Ghitu-Duel-Decks-Mind-vs.-Might-MtG-Art.jpg'
   import linsivvi from '$lib/images/Sivvi.jpg'
   import urza from '$lib/images/Urza-Lord-High-Artificer-2-Modern-Horizons-MtG-Art.jpg'
+  import zur from '$lib/images/Zur-the-Enchanter-Promo-MtG-Art.jpg'
+  import lordwindgrace from '$lib/images/Lord_Windgrace.jpg'
+  import vorinclex from '$lib/images/Vorinclex-Monstrous-Raider-Kaldheim-MtG-Art.jpg'
 </script>
 
 <nav id="magic-nav">
@@ -45,6 +48,15 @@
   </a>
   <a href="/magic/urza">
     <img src="{urza}" alt="Urza, Lord High Artificer">
+  </a>
+  <a href="/magic/zur">
+    <img src="{zur}" alt="Zur, the Enchanter">
+  </a>
+  <a href="/magic/lord-windgrace">
+    <img src="{lordwindgrace}" alt="Lord Windgrace">
+  </a>
+  <a href="/magic/vorinclex">
+    <img src="{vorinclex}" alt="Vorinclex, Monstrous Raider">
   </a>
 </nav>
 <div id="magic-view">
