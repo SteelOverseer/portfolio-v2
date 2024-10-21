@@ -73,8 +73,8 @@
     }
 
     img {
-      width: 7rem;
-      height: 6rem;
+      width: 110px;
+      height: 110px;
     }
   }
 

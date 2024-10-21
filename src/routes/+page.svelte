@@ -54,8 +54,8 @@
       align-items: center;
       height: 41rem;
       img {
-        width: 10rem;
-        height: 13rem;
+        width: 100px;
+        height: 130px;
       }
     }
   }
