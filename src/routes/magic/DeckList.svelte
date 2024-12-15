@@ -1,15 +1,31 @@
 <script>
   import { Popover } from "@sveltestrap/sveltestrap";
 
-  export let commander = null
-  export let creatures = null
-  export let artifacts = null
-  export let instants = null
-  export let sorceries = null
-  export let planeswalkers = null
-  export let lands = null
-  export let enchantments = null
-  export let battles = null
+  /**
+   * @typedef {Object} Props
+   * @property {any} [commander]
+   * @property {any} [creatures]
+   * @property {any} [artifacts]
+   * @property {any} [instants]
+   * @property {any} [sorceries]
+   * @property {any} [planeswalkers]
+   * @property {any} [lands]
+   * @property {any} [enchantments]
+   * @property {any} [battles]
+   */
+
+  /** @type {Props} */
+  let {
+    commander = null,
+    creatures = null,
+    artifacts = null,
+    instants = null,
+    sorceries = null,
+    planeswalkers = null,
+    lands = null,
+    enchantments = null,
+    battles = null
+  } = $props();
 </script>
 
 <div id="decklist">

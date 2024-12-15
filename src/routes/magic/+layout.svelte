@@ -13,6 +13,13 @@
   import zur from '$lib/images/Zur-the-Enchanter-Promo-MtG-Art.webp'
   import lordwindgrace from '$lib/images/Lord_Windgrace.webp'
   import vorinclex from '$lib/images/Vorinclex-Monstrous-Raider-Kaldheim-MtG-Art.webp'
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props} */
+  let { children } = $props();
 </script>
 
 <svelte:head>
@@ -77,7 +84,7 @@
   </a>
 </nav>
 <div id="magic-view">
-  <slot></slot>
+  {@render children?.()}
 </div>
 
 <style lang="scss">

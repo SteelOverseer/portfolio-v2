@@ -1,11 +1,13 @@
+<!-- @migration-task Error while migrating Svelte code: `<body>` cannot be a child of `<div>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
+https://svelte.dev/e/node_invalid_placement -->
 <script>
   import destiny from '$lib/images/destiny.webp'
   import factorio from '$lib/images/factorio.webp'
   import valheim from '$lib/images/valheim.webp'
 </script>
 
-<div id="about">
-  <body>
+<body>
+  <div id="about">
     <div>
       <h2>Hi, I'm Doug</h2>
     </div>
@@ -38,8 +40,8 @@
       <br>
       <br>
     </div>
-  </body>
-</div>
+  </div>
+</body>
 
 <style lang="scss">
   #steam-games {

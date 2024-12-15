@@ -1,9 +1,12 @@
 <script>
-	export let title
-	export let url
-	export let technologies
-  export let imagePath
-  export let alternate
+  let {
+    title,
+    url,
+    technologies,
+    imagePath,
+    alternate,
+    children
+  } = $props();
 </script>
 
 <div class="project-card">
@@ -18,7 +21,7 @@
       <img class="image" src="{imagePath}" alt="{alternate}" >
     </div>
     <div>
-      <slot></slot>
+      {@render children?.()}
     </div>
   </div>
 </div>

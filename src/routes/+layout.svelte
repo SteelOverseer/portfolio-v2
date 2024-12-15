@@ -1,6 +1,13 @@
 <script>
   import '../style.css'
   import { Icon } from '@sveltestrap/sveltestrap'
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props} */
+  let { children } = $props();
 </script>
 
 <div id="layout">
@@ -48,7 +55,7 @@
   </div>
 
   <div id="content">
-    <slot></slot>
+    {@render children?.()}
   </div>
 </div>
 

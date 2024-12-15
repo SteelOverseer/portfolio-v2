@@ -1,6 +1,8 @@
-<div id="uses">
-  <body>
-    <h1>Hardware</h1>
+<!-- @migration-task Error while migrating Svelte code: `<body>` cannot be a child of `<div>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
+https://svelte.dev/e/node_invalid_placement -->
+<body>
+  <div id="uses">
+  <h1>Hardware</h1>
     <hr>
     <h2>Development</h2>
     <p>
@@ -67,8 +69,8 @@
     <li>
       Currently enjoying Catpuccin Mocha theme for VS Code and Wezterm
     </li>
-  </body>
-</div>
+  </div>
+</body>
 
 <style lang="scss">
   h1 {
