@@ -1,18 +1,18 @@
 <script>
-  import narset from '$lib/images/Narset-MtG-Art.webp'
-  import neheb from '$lib/images/Neheb-the-Eternal-Hour-of-Devastation-MtG-Art.webp'
-  import urdragon from '$lib/images/The_Ur-Dragon.webp'
-  import arcades from '$lib/images/Arcades-the-Strategist-Core-Set-2019-MtG-Art.webp'
-  import grandarbiter from '$lib/images/grandarbiter.webp'
-  import kwain from '$lib/images/Kwain-Itinerant-Meddler-Commander-Legends-MtG-Art.webp'
-  import chatterfang from '$lib/images/Chatterfang-Squirrel-General-Modern-Horizons-2-MtG-Art.webp'
-  import tasha from '$lib/images/Tasha-the-Witch-Queen-Battle-for-Baldurs-Gate-MtG-Art.webp'
-  import jhoira from '$lib/images/Jhoira-of-the-Ghitu-Duel-Decks-Mind-vs.-Might-MtG-Art.webp'
-  import linsivvi from '$lib/images/Sivvi.webp'
-  import urza from '$lib/images/Urza-Lord-High-Artificer-2-Modern-Horizons-MtG-Art.webp'
-  import zur from '$lib/images/Zur-the-Enchanter-Promo-MtG-Art.webp'
-  import lordwindgrace from '$lib/images/Lord_Windgrace.webp'
-  import vorinclex from '$lib/images/Vorinclex-Monstrous-Raider-Kaldheim-MtG-Art.webp'
+  import narset from '$lib/images/Narset-MtG-Art.webp?enhanced'
+  import neheb from '$lib/images/Neheb-the-Eternal-Hour-of-Devastation-MtG-Art.webp?enhanced'
+  import urdragon from '$lib/images/The_Ur-Dragon.webp?enhanced'
+  import arcades from '$lib/images/Arcades-the-Strategist-Core-Set-2019-MtG-Art.webp?enhanced'
+  import grandarbiter from '$lib/images/grandarbiter.webp?enhanced'
+  import kwain from '$lib/images/Kwain-Itinerant-Meddler-Commander-Legends-MtG-Art.webp?enhanced'
+  import chatterfang from '$lib/images/Chatterfang-Squirrel-General-Modern-Horizons-2-MtG-Art.webp?enhanced'
+  import tasha from '$lib/images/Tasha-the-Witch-Queen-Battle-for-Baldurs-Gate-MtG-Art.webp?enhanced'
+  import jhoira from '$lib/images/Jhoira-of-the-Ghitu-Duel-Decks-Mind-vs.-Might-MtG-Art.webp?enhanced'
+  import linsivvi from '$lib/images/Sivvi.webp?enhanced'
+  import urza from '$lib/images/Urza-Lord-High-Artificer-2-Modern-Horizons-MtG-Art.webp?enhanced'
+  import zur from '$lib/images/Zur-the-Enchanter-Promo-MtG-Art.webp?enhanced'
+  import lordwindgrace from '$lib/images/Lord_Windgrace.webp?enhanced'
+  import vorinclex from '$lib/images/Vorinclex-Monstrous-Raider-Kaldheim-MtG-Art.webp?enhanced'
   /**
    * @typedef {Object} Props
    * @property {import('svelte').Snippet} [children]
@@ -22,7 +22,7 @@
   let { children } = $props();
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
   <link rel="preload" as="image" href="{narset}">
   <link rel="preload" as="image" href="{neheb}">
   <link rel="preload" as="image" href="{urdragon}">
@@ -37,50 +37,50 @@
   <link rel="preload" as="image" href="{zur}">
   <link rel="preload" as="image" href="{lordwindgrace}">
   <link rel="preload" as="image" href="{vorinclex}">
-</svelte:head>
+</svelte:head> -->
 
 <nav id="magic-nav">
   <a href="/magic/narset">
-    <img src="{narset}" alt="Narset, Enlightened Master">
+    <enhanced:img src="{narset}" alt="Narset, Enlightened Master">
   </a>
   <a href="/magic/neheb">
-    <img src="{neheb}" alt="Neheb, the Eternal">
+    <enhanced:img src="{neheb}" alt="Neheb, the Eternal">
   </a>
   <a href="/magic/dragons">
-    <img src="{urdragon}" alt="The Ur-Dragon">
+    <enhanced:img src="{urdragon}" alt="The Ur-Dragon">
   </a>
   <a href="/magic/arcades">
-    <img src="{arcades}" alt="Arcades, the Strategist">
+    <enhanced:img src="{arcades}" alt="Arcades, the Strategist">
   </a>
   <a href="/magic/taxes">
-    <img src="{grandarbiter}" alt="Grand Arbiter Augustin IV">
+    <enhanced:img src="{grandarbiter}" alt="Grand Arbiter Augustin IV">
   </a>
   <a href="/magic/grouphug">
-    <img src="{kwain}" alt="Kwain, Itinerant Meddler">
+    <enhanced:img src="{kwain}" alt="Kwain, Itinerant Meddler">
   </a>
   <a href="/magic/squirrels">
-    <img src="{chatterfang}" alt="Chatterfang, Squirrel General">
+    <enhanced:img src="{chatterfang}" alt="Chatterfang, Squirrel General">
   </a>
   <a href="/magic/tasha">
-    <img src="{tasha}" alt="Tasha, the Witch Queen">
+    <enhanced:img src="{tasha}" alt="Tasha, the Witch Queen">
   </a>
   <a href="/magic/jhoira">
-    <img src="{jhoira}" alt="Jhoira of the Ghitu">
+    <enhanced:img src="{jhoira}" alt="Jhoira of the Ghitu">
   </a>
   <a href="/magic/rebels">
-    <img src="{linsivvi}" alt="Lin Sivvi, Defiant Hero">
+    <enhanced:img src="{linsivvi}" alt="Lin Sivvi, Defiant Hero">
   </a>
   <a href="/magic/urza">
-    <img src="{urza}" alt="Urza, Lord High Artificer">
+    <enhanced:img src="{urza}" alt="Urza, Lord High Artificer">
   </a>
   <a href="/magic/zur">
-    <img src="{zur}" alt="Zur, the Enchanter">
+    <enhanced:img src="{zur}" alt="Zur, the Enchanter">
   </a>
   <a href="/magic/lord-windgrace">
-    <img src="{lordwindgrace}" alt="Lord Windgrace">
+    <enhanced:img src="{lordwindgrace}" alt="Lord Windgrace">
   </a>
   <a href="/magic/vorinclex">
-    <img src="{vorinclex}" alt="Vorinclex, Monstrous Raider">
+    <enhanced:img src="{vorinclex}" alt="Vorinclex, Monstrous Raider">
   </a>
 </nav>
 <div id="magic-view">

@@ -18,7 +18,7 @@
   <hr>
   <div class="card-contents">
     <div class="image-container">
-      <img class="image" src="{imagePath}" alt="{alternate}" >
+      <enhanced:img class="image" src="{imagePath}" alt="{alternate}" >
     </div>
     <div>
       {@render children?.()}

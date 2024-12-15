@@ -1,10 +1,10 @@
 <script>
   import ProjectCard from "./ProjectCard.svelte";
-  import timetracker from '$lib/images/timetracker.webp'
-  import digitalcookbook from '$lib/images/digitalcookbook_v1.webp'
-  import cardfinderoutput from '$lib/images/cardfinderoutput.webp'
-  import gameoflife from '$lib/images/gameoflife.webp'
-  import gameoflifetui from '$lib/images/gameoflifetui.webp'
+  import timetracker from '$lib/images/timetracker.webp?enhanced'
+  import digitalcookbook from '$lib/images/digitalcookbook_v1.webp?enhanced'
+  import cardfinderoutput from '$lib/images/cardfinderoutput.webp?enhanced'
+  import gameoflife from '$lib/images/gameoflife.webp?enhanced'
+  import gameoflifetui from '$lib/images/gameoflifetui.webp?enhanced'
 </script>
 
 <div id="projects">
