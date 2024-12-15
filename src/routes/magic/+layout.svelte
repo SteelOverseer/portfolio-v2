@@ -15,7 +15,7 @@
   import vorinclex from '$lib/images/Vorinclex-Monstrous-Raider-Kaldheim-MtG-Art.webp'
 </script>
 
-<!-- <svelte:head>
+<svelte:head>
   <link rel="preload" as="image" href="{narset}">
   <link rel="preload" as="image" href="{neheb}">
   <link rel="preload" as="image" href="{urdragon}">
@@ -30,7 +30,7 @@
   <link rel="preload" as="image" href="{zur}">
   <link rel="preload" as="image" href="{lordwindgrace}">
   <link rel="preload" as="image" href="{vorinclex}">
-</svelte:head> -->
+</svelte:head>
 
 <nav id="magic-nav">
   <a href="/magic/narset">
