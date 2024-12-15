@@ -1,8 +1,9 @@
 <script>
-  import destiny from '$lib/images/destiny.png'
-  import factorio from '$lib/images/factorio.png'
-  import valheim from '$lib/images/valheim.png'
+  import destiny from '$lib/images/destiny.webp'
+  import factorio from '$lib/images/factorio.webp'
+  import valheim from '$lib/images/valheim.webp'
 </script>
+
 <div id="about">
   <body>
     <div>
