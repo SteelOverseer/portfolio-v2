@@ -22,9 +22,9 @@
   let { children } = $props();
 </script>
 
-<!-- <svelte:head>
-  <link rel="preload" as="image" href="{narset}">
-  <link rel="preload" as="image" href="{neheb}">
+<svelte:head>
+  <!-- <link rel="preload" as="image" href="{narset}"> -->
+  <!-- <link rel="preload" as="image" href="{neheb}">
   <link rel="preload" as="image" href="{urdragon}">
   <link rel="preload" as="image" href="{arcades}">
   <link rel="preload" as="image" href="{grandarbiter}">
@@ -36,8 +36,8 @@
   <link rel="preload" as="image" href="{urza}">
   <link rel="preload" as="image" href="{zur}">
   <link rel="preload" as="image" href="{lordwindgrace}">
-  <link rel="preload" as="image" href="{vorinclex}">
-</svelte:head> -->
+  <link rel="preload" as="image" href="{vorinclex}"> -->
+</svelte:head>
 
 <nav id="magic-nav">
   <a href="/magic/narset">
