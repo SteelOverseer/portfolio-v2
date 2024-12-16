@@ -19,25 +19,25 @@
       <a href="mailto:doug@dougschultz.dev" target="_blank">
         <Icon
           name="envelope"
-          style="{
+          style={
             "font-size:30px; color: #660033;"
-          }"
+          }
         />
       </a>
       <a href="https://github.com/SteelOverseer" target="_blank">
         <Icon
           name="github"
-          style="{
+          style={
             "font-size:30px; color: #660033;"
-          }"
+          }
         />
       </a>
       <a href="https://www.linkedin.com/in/douglas-schultz-7a9819a7/" target="_blank">
         <Icon
           name="linkedin"
-          style="{
+          style={
             "font-size:30px; color: #660033;"
-          }"
+          }
         />
       </a>
     </div>
