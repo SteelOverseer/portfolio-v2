@@ -41,46 +41,46 @@
 
 <nav id="magic-nav">
   <a href="/magic/narset">
-    <enhanced:img src="{narset}" alt="Narset, Enlightened Master">
+    <enhanced:img src="$lib/images/Narset-MtG-Art.webp?w=100" alt="Narset, Enlightened Master">
   </a>
   <a href="/magic/neheb">
-    <enhanced:img src="{neheb}" alt="Neheb, the Eternal">
+    <enhanced:img src="$lib/images/Neheb-the-Eternal-Hour-of-Devastation-MtG-Art.webp?w=100" alt="Neheb, the Eternal">
   </a>
   <a href="/magic/dragons">
-    <enhanced:img src="{urdragon}" alt="The Ur-Dragon">
+    <enhanced:img src="$lib/images/The_Ur-Dragon.webp?w=100" alt="The Ur-Dragon">
   </a>
   <a href="/magic/arcades">
-    <enhanced:img src="{arcades}" alt="Arcades, the Strategist">
+    <enhanced:img src="$lib/images/Arcades-the-Strategist-Core-Set-2019-MtG-Art.webp?w=100" alt="Arcades, the Strategist">
   </a>
   <a href="/magic/taxes">
-    <enhanced:img src="{grandarbiter}" alt="Grand Arbiter Augustin IV">
+    <enhanced:img src="$lib/images/grandarbiter.webp?w=100" alt="Grand Arbiter Augustin IV">
   </a>
   <a href="/magic/grouphug">
-    <enhanced:img src="{kwain}" alt="Kwain, Itinerant Meddler">
+    <enhanced:img src="$lib/images/Kwain-Itinerant-Meddler-Commander-Legends-MtG-Art.webp?w=100" alt="Kwain, Itinerant Meddler">
   </a>
   <a href="/magic/squirrels">
-    <enhanced:img src="{chatterfang}" alt="Chatterfang, Squirrel General">
+    <enhanced:img src="$lib/images/Chatterfang-Squirrel-General-Modern-Horizons-2-MtG-Art.webp?w=100" alt="Chatterfang, Squirrel General">
   </a>
   <a href="/magic/tasha">
-    <enhanced:img src="{tasha}" alt="Tasha, the Witch Queen">
+    <enhanced:img src="$lib/images/Tasha-the-Witch-Queen-Battle-for-Baldurs-Gate-MtG-Art.webp?w=100" alt="Tasha, the Witch Queen">
   </a>
   <a href="/magic/jhoira">
-    <enhanced:img src="{jhoira}" alt="Jhoira of the Ghitu">
+    <enhanced:img src="$lib/images/Jhoira-of-the-Ghitu-Duel-Decks-Mind-vs.-Might-MtG-Art.webp?w=100" alt="Jhoira of the Ghitu">
   </a>
   <a href="/magic/rebels">
-    <enhanced:img src="{linsivvi}" alt="Lin Sivvi, Defiant Hero">
+    <enhanced:img src="$lib/images/Sivvi.webp?w=100" alt="Lin Sivvi, Defiant Hero">
   </a>
   <a href="/magic/urza">
-    <enhanced:img src="{urza}" alt="Urza, Lord High Artificer">
+    <enhanced:img src="$lib/images/Urza-Lord-High-Artificer-2-Modern-Horizons-MtG-Art.webp?w=100" alt="Urza, Lord High Artificer">
   </a>
   <a href="/magic/zur">
-    <enhanced:img src="{zur}" alt="Zur, the Enchanter">
+    <enhanced:img src="$lib/images/Zur-the-Enchanter-Promo-MtG-Art.webp?w=100" alt="Zur, the Enchanter">
   </a>
   <a href="/magic/lord-windgrace">
-    <enhanced:img src="{lordwindgrace}" alt="Lord Windgrace">
+    <enhanced:img src="$lib/images/Lord_Windgrace.webp?w=100" alt="Lord Windgrace">
   </a>
   <a href="/magic/vorinclex">
-    <enhanced:img src="{vorinclex}" alt="Vorinclex, Monstrous Raider">
+    <enhanced:img src="$lib/images/Vorinclex-Monstrous-Raider-Kaldheim-MtG-Art.webp?w=100" alt="Vorinclex, Monstrous Raider">
   </a>
 </nav>
 <div id="magic-view">
