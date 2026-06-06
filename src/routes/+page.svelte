@@ -1,7 +1,8 @@
 <script>
-  import destiny from '$lib/images/destiny.webp'
-  import factorio from '$lib/images/factorio.webp'
-  import valheim from '$lib/images/valheim.webp'
+  let { data } = $props()
+  const allGames = data.ownedGames.response.games;
+  const topFiveGames = allGames?.sort((a, b) => b.playtime_forever - a.playtime_forever).slice(0,5);
+  const latestGame = data?.recentlyPlayed?.response.games[0]
 </script>
 
 <div id="about">
@@ -20,15 +21,42 @@
 
     <h3>The Fun Stuff</h3>
     I've been an avid gamer my entire life, a hobby that started while I was young playing the Super Nintendo with my family and has evolved into playing 
-    a variety of games on my custom built gaming pc. Steam is my game store of choice, with my top 3 games being:
+    a variety of games on my custom built gaming pc. Steam is my game store of choice, with my top 5 games being:
     <br>
     <div id="steam-games">
-      <img src="{destiny}" alt="Destiny 2 - 1,136.7 hours">
-      <img src="{factorio}" alt="Factorio - 357.1 hours">
-      <img src="{valheim}" alt="Valheim - 234.3 hours">
+      {#each topFiveGames as game}
+        <div class="steam-game">
+          <img 
+            src={`https://steamcdn-a.akamaihd.net/steam/apps/${game.appid}/library_600x900.jpg`} 
+            alt={game.name}
+            width="200"
+            height="300"
+          >
+          <div>
+            {game.name}
+          </div>
+          <div class="playtime">
+            {Math.round(game.playtime_forever / 60)} Hours Played
+          </div>
+        </div>
+      {/each}
     </div>
     
-    Lately I've been playing Elden Ring, wish me luck!
+    Recently I've played
+    <div class="steam-game">
+      <img 
+        src={`https://steamcdn-a.akamaihd.net/steam/apps/${latestGame.appid}/library_600x900.jpg`} 
+        alt={latestGame.name}
+        width="200"
+        height="300"
+      >
+      <div>
+        {latestGame.name}
+      </div>
+      <div class="playtime">
+        {Math.round(latestGame.playtime_forever / 60)} Hours Played
+      </div>
+    </div>
     <br>
     And, although I play on PC nowadays, Nintendo still holds my favorite titles in Legend of Zelda, Metroid Prime, and Super Smash Bros.
     <br>
@@ -45,6 +73,16 @@
     justify-content: space-evenly;
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .steam-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .playtime {
+    font-size: small;
   }
 
   @media only screen and (max-width: 800px) {

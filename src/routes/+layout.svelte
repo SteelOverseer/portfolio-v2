@@ -45,6 +45,11 @@
     <div id="subtext">
       Full stack software engineer with a passion for learning.
     </div>
+
+    <div id="construction-banner">
+      UNDER CONSTRUCTION
+      I am currently updating my site, please ignore the dust :)
+    </div>
   
     <nav>
       <a href="/">About</a>
@@ -110,6 +115,15 @@
       flex-direction: column;
       align-items: center;
       padding-bottom: 5rem;
+    }
+
+    #construction-banner {
+      text-align: center;
+      font-size: x-large;
+      color: black;
+      background-color: yellow;
+      width: 100%;
+      height: 200px;
     }
   }
 </style>
