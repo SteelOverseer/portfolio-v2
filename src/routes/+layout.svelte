@@ -47,8 +47,7 @@
     </div>
 
     <div id="construction-banner">
-      UNDER CONSTRUCTION
-      I am currently updating my site, please ignore the dust :)
+      UNDER CONSTRUCTION - please ignore the dust :)
     </div>
   
     <nav>
@@ -80,6 +79,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-bottom: 1rem;
 
       #links {
         display: flex;
@@ -121,9 +121,10 @@
       text-align: center;
       font-size: x-large;
       color: black;
-      background-color: yellow;
+      background-color: #f1c40f;
       width: 100%;
       height: 200px;
     }
   }
+
 </style>
