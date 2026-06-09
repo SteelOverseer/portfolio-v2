@@ -43,7 +43,7 @@
     </div>
     
     <div id="subtext">
-      Full stack software engineer with a passion for learning.
+      Full-stack software engineer focused on clean architecture, reliable systems, and building cool things that scale.
     </div>
 
     <div id="construction-banner">
@@ -75,7 +75,6 @@
     #header {
       border-bottom: 5px solid #660033;
       width: 100%;
-      height: 14rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -123,7 +122,7 @@
       color: black;
       background-color: #f1c40f;
       width: 100%;
-      height: 200px;
+      height: 75px;
     }
   }
 
