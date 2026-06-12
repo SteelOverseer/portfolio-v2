@@ -45,16 +45,12 @@
     <div id="subtext">
       Full-stack software engineer focused on clean architecture, reliable systems, and building cool things that scale.
     </div>
-
-    <div id="construction-banner">
-      UNDER CONSTRUCTION - please ignore the dust :)
-    </div>
   
     <nav>
       <a href="/">About</a>
       <a href="/projects">Projects</a>
-      <a href="/uses">Uses</a>
       <a href="/magic">Library</a>
+      <a href="/uses">Uses</a>
     </nav>
   </div>
 
@@ -114,15 +110,6 @@
       flex-direction: column;
       align-items: center;
       padding-bottom: 5rem;
-    }
-
-    #construction-banner {
-      text-align: center;
-      font-size: x-large;
-      color: black;
-      background-color: #f1c40f;
-      width: 100%;
-      height: 75px;
     }
   }
 

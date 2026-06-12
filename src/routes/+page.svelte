@@ -18,7 +18,8 @@
     </p>
 
     <h3>The Fun Stuff</h3>
-    I've been an avid gamer my entire life, a hobby that started while I was young playing the Super Nintendo with my family and has evolved into playing 
+    I've been an avid gamer my entire life, a hobby that started while I was young playing 
+    titles like <em>Legend of Zelda</em>, <em>Metroid Prime</em>, and <em>Super Smash Bros.</em> on Nintendo has evolved into playing 
     a variety of games on my custom built gaming pc. I have an ever growing library on steam, but these are my top 5 played of all time.
     <br>
     <div id="steam-games">
@@ -39,32 +40,36 @@
         </div>
       {/each}
     </div>
-    
-    Destiny 2 used to be my daily driver, but lately I've been branching out more into new titles.
-    <br>
-    Currently I'm playing:
-    {#if latestGame}
-      <div class="steam-game">
-        <img 
-          src={`https://steamcdn-a.akamaihd.net/steam/apps/${latestGame.appid}/library_600x900.jpg`} 
-          alt={latestGame.name}
-          width="200"
-          height="300"
-        >
-        <div>
-          {latestGame.name}
+    <div id="currently-playing">
+      <span id="currently-playing-blurb">
+        <p>
+          <em>Destiny 2</em> used to be my daily driver, but lately I've been branching out more into new titles.
+        </p>
+        Currently I'm playing:
+      </span>
+      {#if latestGame}
+        <div class="steam-game">
+          <img 
+            src={`https://steamcdn-a.akamaihd.net/steam/apps/${latestGame.appid}/library_600x900.jpg`} 
+            alt={latestGame.name}
+            width="200"
+            height="300"
+          >
+          <div>
+            {latestGame.name}
+          </div>
+          <div class="playtime">
+            {Math.round(latestGame.playtime_forever / 60)} Hours Played
+          </div>
         </div>
-        <div class="playtime">
-          {Math.round(latestGame.playtime_forever / 60)} Hours Played
-        </div>
-      </div>
-    {/if}
+      {/if}
+    </div>
     <br>
-    And, although I play on PC nowadays, Nintendo still holds my favorite titles in Legend of Zelda, Metroid Prime, and Super Smash Bros.
-    <br>
-    <br>
-    If it's not video games, its magic cards. I enjoy collecting and playing Magic: the Gathering and meet with my friends weekly to terrorize them with a new brew.
-    <br>
+      <p>
+        Beyond video games, my biggest passion is <strong>Magic: The Gathering</strong>. 
+        I've been playing casually since 2007, and now I meet up with friends weekly to play Commander.
+        Head on over to the library tab to check out some of my commanders!
+      </p>
     <br>
   </div>
 </div>
@@ -87,6 +92,19 @@
     font-size: small;
   }
 
+  #currently-playing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    #currently-playing-blurb {
+      padding-right: 5px;
+      width: 300px;
+    }
+  }
+
+
   @media only screen and (max-width: 1100px) {
     #steam-games {
       display: flex;
@@ -95,6 +113,18 @@
       img {
         width: 100px;
         height: 130px;
+      }
+    }
+
+    #currently-playing {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      #currently-playing-blurb {
+        padding-right: 5px;
+        width: 100%;
       }
     }
 
