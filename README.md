@@ -2,3 +2,6 @@
 
 Built in svelte with sveltekit.
 
+Hosted on Netlify, visit dougschultz.dev
+
+Steam API documentation: https://developer.valvesoftware.com/wiki/Steam_Web_API
