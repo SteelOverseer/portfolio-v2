@@ -52,6 +52,10 @@ for card in card_data:
         VALUES (?,?,?,?,?,?,?)
     """, (card_id, image.get("small"), image.get("normal"), image.get("large"), image.get("png"), image.get("art_crop"), image.get("border_crop")))
 
+# TURSO PREPARATION: Enable WAL mode and truncate the log file
+cursor.execute("PRAGMA journal_mode=WAL;")
+cursor.execute("PRAGMA wal_checkpoint(TRUNCATE);")
+
 connection.commit()
 connection.close()
 print("Database successfully generated")
