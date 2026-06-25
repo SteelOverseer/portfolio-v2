@@ -2,10 +2,12 @@
   /**
    * @typedef {Object} Props
    * @property {import('svelte').Snippet} [children]
+   * @property {import('./$types').LayoutData} data
    */
 
   /** @type {Props} */
-  let { children } = $props();
+  let { data, children } = $props();
+  console.log(data)
 </script>
 
 <nav id="magic-nav">
