@@ -24,12 +24,10 @@
     planeswalkers = null,
     lands = null,
     enchantments = null,
-    battles = null
+    battles = null,
+    showCardPreview
   } = $props();
 
-  function formatName (name) {
-    return name.toLowerCase().replaceAll("'", "").replaceAll(",", "").replaceAll("/","").replaceAll(" ", "-")
-  }
 </script>
 
 <div id="decklist">
@@ -38,202 +36,148 @@
       Commander:
     </strong>
     <hr>
-      <span id={formatName(commander.name)}>
-        {commander.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(commander.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(commander)}
       >
-        <img 
-          src="{commander.source}"
-          alt="{commander.name}"
-        >
-      </Popover>
+        {commander.name}
+      </button>
     <br>
     <br>
   {/if}
-  {#if creatures != null}
+  {#if creatures != null && creatures.length > 0}
     <strong>
       Creatures:
     </strong>
     <hr>
     {#each creatures as creature}
-      <span id={formatName(creature.name)}>
-        {creature.quantity} {creature.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(creature.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(creature)}
       >
-        <img 
-          src="{creature.source}"
-          alt="{creature.name}"
-        >
-      </Popover>
+        {creature.name}
+      </button>
       <br>
     {/each}
     <br>
   {/if}
-  {#if instants != null}
+  {#if instants != null && instants.length > 0}
     <strong>
       Instants:
     </strong>
     <hr>
     {#each instants as instant}
-      <span id={formatName(instant.name)}>
-        {instant.quantity} {instant.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(instant.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(instant)}
       >
-        <img 
-          src="{instant.source}"
-          alt="{instant.name}"
-        >
-      </Popover>
+        {instant.name}
+      </button>
       <br>
     {/each}
     <br>
   {/if}
-  {#if sorceries != null}
+  {#if sorceries != null && sorceries.length > 0}
     <strong>
       Sorceries:
     </strong>
     <hr>
     {#each sorceries as sorcery}
-      <span id={formatName(sorcery.name)}>
-        {sorcery.quantity} {sorcery.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(sorcery.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(sorcery)}
       >
-        <img 
-          src="{sorcery.source}"
-          alt="{sorcery.name}"
-        >
-      </Popover>
+        {sorcery.name}
+      </button>
       <br>
     {/each}
     <br>
   {/if}
-  {#if artifacts != null}
+  {#if artifacts != null && artifacts.length > 0}
     <strong>
       Artifacts:
     </strong>
     <hr>
     {#each artifacts as artifact}
-      <span id={formatName(artifact.name)}>
-        {artifact.quantity} {artifact.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(artifact.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(artifact)}
       >
-        <img 
-          src="{artifact.source}"
-          alt="{artifact.name}"
-        >
-      </Popover>
+        {artifact.name}
+      </button>
       <br>
     {/each}
     <br>
   {/if}
-  {#if enchantments != null}
+  {#if enchantments != null && enchantments.length > 0}
     <strong>
       Enchantments:
     </strong>
     <hr>
     {#each enchantments as enchantment}
-      <span id={formatName(enchantment.name)}>
-        {enchantment.quantity} {enchantment.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(enchantment.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(enchantment)}
       >
-        <img 
-          src="{enchantment.source}"
-          alt="{enchantment.name}"
-        >
-      </Popover>
+        {enchantment.name}
+      </button>
       <br>
     {/each}
     <br>
   {/if}
-  {#if planeswalkers != null}
+  {#if planeswalkers != null && planeswalkers.length > 0}
     <strong>
       Planeswalkers:
     </strong>
     <hr>
     {#each planeswalkers as planeswalker}
-      <span id={formatName(planeswalker.name)}>
-        {planeswalker.quantity} {planeswalker.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(planeswalker.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(planeswalker)}
       >
-        <img 
-          src="{planeswalker.source}"
-          alt="{planeswalker.name}"
-        >
-      </Popover>
+        {planeswalker.name}
+      </button>
       <br>
     {/each}
     <br>
   {/if}
-  {#if battles != null}
+  {#if battles != null && battles.length > 0}
     <strong>
       Battles:
     </strong>
     <hr>
     {#each battles as battle}
-      <span id={formatName(battle.name)}>
-        {battle.quantity} {battle.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(battle.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(battle)}
       >
-        <img 
-          src="{battle.source}"
-          alt="{battle.name}"
-        >
-      </Popover>
+        {battle.name}
+      </button>
       <br>
     {/each}
     <br>
   {/if}
-  {#if lands != null}
+  {#if lands != null && lands.length > 0}
     <strong>
       Lands:
     </strong>
     <hr>
     {#each lands as land}
-      <span id={formatName(land.name)}>
-        {land.quantity} {land.name}
-      </span>
-      <Popover
-        trigger="hover"
-        placement="right"
-        target={formatName(land.name)}
+      <button 
+        type="button"
+        class="unstyled-preview-trigger"
+        onmouseenter={() => showCardPreview(land)}
       >
-        <img 
-          src="{land.source}"
-          alt="{land.name}"
-        >
-      </Popover>
+        {land.name}
+      </button>
       <br>
     {/each}
   {/if}
@@ -258,6 +202,17 @@
     width: 50%;
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .unstyled-preview-trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-align: inherit;
   }
 
   @media only screen and (max-width: 800px) {

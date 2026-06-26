@@ -1,6 +1,8 @@
 <script>
   import '../style.css'
   import { Icon } from '@sveltestrap/sveltestrap'
+  import { onMount } from 'svelte';
+  import { preloadData } from '$app/navigation';
   /**
    * @typedef {Object} Props
    * @property {import('svelte').Snippet} [children]
@@ -8,6 +10,17 @@
 
   /** @type {Props} */
   let { children } = $props();
+
+  onMount(async () => {
+    try {
+      await Promise.all([
+        preloadData('/magic'),
+      ]);
+      console.log('Server routes successfully preloaded in the background.');
+    } catch (error) {
+      console.error('Background preloading failed:', error);
+    }
+  });
 </script>
 
 <div id="layout">

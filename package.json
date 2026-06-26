@@ -13,8 +13,9 @@
 		"@sveltejs/enhanced-img": "^0.4.4",
 		"@sveltejs/kit": "^2.5.27",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"@types/node": "^26.0.1",
 		"sass": "^1.77.8",
-		"svelte": "^5.0.0",
+		"svelte": "^5.56.4",
 		"vite": "^5.4.4"
 	},
 	"type": "module",

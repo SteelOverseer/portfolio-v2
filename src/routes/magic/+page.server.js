@@ -1,8 +1,6 @@
 import { db } from '$lib/server/db';
 import { JWT } from 'google-auth-library';
-import { PRIVATE_GOOGLE_CLIENT_EMAIL, PRIVATE_GOOGLE_PRIVATE_KEY } from '$env/static/private';
-
-const FOLDER_ID = '1eFrPBSgtlMBhuHXjn0QH26GWl3nXXQda';
+import { PRIVATE_GOOGLE_CLIENT_EMAIL, PRIVATE_GOOGLE_PRIVATE_KEY, FOLDER_ID } from '$env/static/private';
 
 // Initialize the authenticated Google Service Account client
 const authClient = new JWT({
@@ -20,9 +18,12 @@ export const config = {
   }
 };
 
-const cleanName = (name) => name.trim();
+function cleanName(name) {
+  if (!name) return '';
+  return name.replace(/\r/g, '').trim(); 
+}
 
-export const load = async () => {
+export const load = async ({ setHeaders, locals }) => {
   try {
     // Authorize the client before making requests
     await authClient.authorize();
@@ -48,39 +49,68 @@ export const load = async () => {
       let isCommanderSection = false;
 
       const lines = rawText.split(/\r?\n/);
+      const lookupStatement = db.prepare(`
+        SELECT
+          cards.name,
+          cards.type_line,
+          card_images.art_crop,
+          card_images.large
+        FROM cards
+        INNER JOIN card_images ON cards.id = card_images.card_id
+        WHERE cards.layout != 'art_series' 
+          AND (cards.name = @exactName OR cards.name LIKE @dfcName)
+      `);
 
       for(let line of lines) {
         line = line.trim();
-        if (!line) continue;
+        if (!line) {
+          isCommanderSection = false
+          continue;
+        }
 
-        // Detect section headers
-        if (line.toUpperCase().includes('COMMANDER')) {
+        if (line.toUpperCase().includes('// COMMANDER')) {
           isCommanderSection = true;
           continue;
         }
 
-        const regex = /^(\d+)\s+([^(\n]+)(?:\s+\(([^)]+)\)\s+(\d+))?/;
-        const match = line.match(regex);
+        // if(isCommanderSection) console.log(line)
+
+        const regex = /^(\d+)\s+([^(\n]+?)\s+\(([^)]+)\)\s+(\d+)(?:\s+\*[A-Z]\*)?$/i;
+        const match = line.trim().match(regex);
+
+        // if(isCommanderSection) console.log(match)
+
 
         if (match) {
           const quantity = parseInt(match[1], 10);
           const name = cleanName(match[2]);
-          // I'm using the oracle database, so being this specific doesnt matter
-          //const setCode = match[3] ? match[3].toLowerCase() : null;
-          //const collectorNumber = match[4] || null;
+
+          // if(isCommanderSection) console.log(name)
 
           let cardDetails;
 
           if(!Object.hasOwn(allCards, name)) {
             try {
-              let dbCard = db.prepare(`
-                SELECT * 
-                FROM cards
-                INNER JOIN card_images ON cards.id = card_images.card_id
-                WHERE name = ?
-              `).get(name);
+              let rows = lookupStatement.all({
+                exactName: name,
+                dfcName: `${name} //%`
+              });
 
-              allCards[name] = dbCard || { error: 'Card data missing from local database' }
+              if(rows.length > 0) {
+                const { large, art_crop, ...cardData } = rows[0];
+                const faces = rows.map(r => ({
+                  large: r.large,
+                  art_crop: r.art_crop,
+                }));
+
+                allCards[name] = {
+                  ...cardData,
+                  faces: faces
+                };
+              }
+              else {
+                allCards[name] = { error: 'Card data missing from local database' }
+              }
             } catch (dbError) {
               console.error('Database query failed for:', name, dbError);
             }
@@ -90,13 +120,11 @@ export const load = async () => {
           
           const cardObject = {
             quantity,
-            name,
-            details
+            ...details
           };
 
           if (isCommanderSection) {
             commanderCards.push(cardObject);
-            isCommanderSection = false; 
           } else {
             mainboardCards.push(cardObject);
           }
@@ -111,6 +139,11 @@ export const load = async () => {
     });
 
     const completedDecks = await Promise.all(parsedDeckPromises);
+
+    setHeaders({
+      'cache-control': 'private, max-age=60'
+    });
+
     return { decks: completedDecks };
 
   } catch (error) {
