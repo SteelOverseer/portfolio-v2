@@ -23,7 +23,7 @@ function cleanName(name) {
   return name.replace(/\r/g, '').trim(); 
 }
 
-export const load = async ({ setHeaders, locals }) => {
+export const load = async ({ setHeaders }) => {
   try {
     // Authorize the client before making requests
     await authClient.authorize();
@@ -37,99 +37,89 @@ export const load = async ({ setHeaders, locals }) => {
       return { decks: {} };
     }
 
-    // 2. Download the contents concurrently
-    const parsedDeckPromises = listData.files.map(async (file) => {
-      const fileUrl = `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media`;
-      const fileResponse = await authClient.request({ url: fileUrl, responseType: 'text' });
-      const rawText = fileResponse.data;
+    const filePayloads = await Promise.all(
+      listData.files.map(async (file) => {
+        const fileUrl = `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media`;
+        const fileResponse = await authClient.request({ url: fileUrl, responseType: 'text' });
+        return { name: file.name, text: fileResponse.data };
+      })
+    );
 
-      const commanderCards = [];
-      const mainboardCards = [];
-      const allCards = {}; // store fetched cards to avoid repeated querying
-      let isCommanderSection = false;
+    const uniqueNames = new Set();
+    const regex = /^(\d+)\s+([^(\n]+?)\s+\(([^)]+)\)\s+(\d+)(?:\s+\*[A-Z]\*)?$/i;
 
-      const lines = rawText.split(/\r?\n/);
-      const lookupStatement = db.prepare(`
-        SELECT
-          cards.name,
-          cards.type_line,
-          card_images.art_crop,
-          card_images.large
+    filePayloads.forEach(file => {
+      file.text.split(/\r?\n/).forEach(line => {
+        const match = line.trim().match(regex);
+        if (match) uniqueNames.add(cleanName(match[2]));
+      });
+    });
+
+    const nameArray = Array.from(uniqueNames);
+    const allCards = {};
+
+    if (nameArray.length > 0) {
+      // Dynamically build a bulk parameters placeholder list (?, ?, ?)
+      const conditions = nameArray.map(() => `(cards.name = ? OR cards.name LIKE ?)`).join(' OR ');
+      
+      const bulkStatement = db.prepare(`
+        SELECT cards.name, cards.type_line, card_images.art_crop, card_images.large
         FROM cards
         INNER JOIN card_images ON cards.id = card_images.card_id
         WHERE cards.layout != 'art_series' 
-          AND (cards.name = @exactName OR cards.name LIKE @dfcName)
+          AND (${conditions})
       `);
 
-      for(let line of lines) {
+      const queryParams = nameArray.flatMap(name => [name, `${name} //%`])
+
+      const rows = bulkStatement.all(...queryParams);
+
+      rows.forEach(row => {
+        // Find which unique name from your decklist matched this row
+        // (Handles mapping "Wrenn and Realmbreaker // Wrenn and Realmbreaker" back to "Wrenn and Realmbreaker")
+        const matchedKey = nameArray.find(name => 
+          row.name === name || row.name.startsWith(`${name} //`)
+        );
+
+        if (matchedKey) {
+          if (!allCards[matchedKey]) {
+            allCards[matchedKey] = { name: row.name, type_line: row.type_line, faces: [] };
+          }
+          allCards[matchedKey].faces.push({ large: row.large, art_crop: row.art_crop });
+        }
+      });
+    }
+
+    const completedDecks = filePayloads.map((file) => {
+      const commanderCards = [];
+      const mainboardCards = [];
+      let isCommanderSection = false;
+
+      file.text.split(/\r?\n/).forEach(line => {
         line = line.trim();
         if (!line) {
-          isCommanderSection = false
-          continue;
+          isCommanderSection = false;
+          return;
         }
-
         if (line.toUpperCase().includes('// COMMANDER')) {
           isCommanderSection = true;
-          continue;
+          return;
         }
 
-        // if(isCommanderSection) console.log(line)
-
-        const regex = /^(\d+)\s+([^(\n]+?)\s+\(([^)]+)\)\s+(\d+)(?:\s+\*[A-Z]\*)?$/i;
-        const match = line.trim().match(regex);
-
-        // if(isCommanderSection) console.log(match)
-
-
+        const match = line.match(regex);
         if (match) {
           const quantity = parseInt(match[1], 10);
           const name = cleanName(match[2]);
+          const details = allCards[name] || { error: 'Card data missing from local database' };
 
-          // if(isCommanderSection) console.log(name)
-
-          let cardDetails;
-
-          if(!Object.hasOwn(allCards, name)) {
-            try {
-              let rows = lookupStatement.all({
-                exactName: name,
-                dfcName: `${name} //%`
-              });
-
-              if(rows.length > 0) {
-                const { large, art_crop, ...cardData } = rows[0];
-                const faces = rows.map(r => ({
-                  large: r.large,
-                  art_crop: r.art_crop,
-                }));
-
-                allCards[name] = {
-                  ...cardData,
-                  faces: faces
-                };
-              }
-              else {
-                allCards[name] = { error: 'Card data missing from local database' }
-              }
-            } catch (dbError) {
-              console.error('Database query failed for:', name, dbError);
-            }
-          }
-
-          const details = allCards[name]
-          
-          const cardObject = {
-            quantity,
-            ...details
-          };
-
+          const cardObject = { quantity, ...details };
           if (isCommanderSection) {
             commanderCards.push(cardObject);
           } else {
             mainboardCards.push(cardObject);
           }
         }
-      }
+      });
 
       return {
         deckName: file.name.replace('.txt', ''),
@@ -137,8 +127,6 @@ export const load = async ({ setHeaders, locals }) => {
         mainboard: mainboardCards
       };
     });
-
-    const completedDecks = await Promise.all(parsedDeckPromises);
 
     setHeaders({
       'cache-control': 'private, max-age=60'
