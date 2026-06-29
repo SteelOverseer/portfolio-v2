@@ -32,6 +32,7 @@ let hoveredCard = $state(null);
 let cardPreview = $state(null)
 let flipped = $state(false)
 let activeMobileCard = $state(null);
+let mobileFlip = $state(0)
 
 let commanders = $derived(selectedDeck?.commanders || null);  
 let creatures = $derived(selectedDeck ? getCardsByType(selectedDeck.mainboard, 'creature') : []);
@@ -63,6 +64,12 @@ const handleHover = (value) => {
 }
 
 const rotateCard = () => {
+  if (window.innerWidth <= 800) {
+    mobileFlip = 1
+    activeMobileCard = hoveredCard
+    return;
+  }
+
   flipped = !flipped
   
   if (flipped) {
@@ -86,24 +93,24 @@ const handleCardClick = (card) => {
     <button class="image-button" onclick={() => selectedDeck = deck} >
       {#if deck.commanders && deck.commanders.length > 0}
         {#if deck.commanders.length >= 2}
-      <div class="partner-split-container">
-        <img 
-          class="partner-primary"
-          src={deck.commanders[0].faces?.[0]?.art_crop}
-          alt={deck.commanders[0].name}
-        >
-        <img 
-          class="partner-secondary"
-          src={deck.commanders[1].faces?.[0]?.art_crop}
-          alt={deck.commanders[1].name}
-        >
-      </div>
-    {:else}
-      <img 
-        src={deck.commanders[0].faces?.[0]?.art_crop}
-        alt={deck.commanders[0].name}
-      >
-    {/if}
+          <div class="partner-split-container">
+            <img 
+              class="partner-primary"
+              src={deck.commanders[0].faces?.[0]?.art_crop}
+              alt={deck.commanders[0].name}
+            >
+            <img 
+              class="partner-secondary"
+              src={deck.commanders[1].faces?.[0]?.art_crop}
+              alt={deck.commanders[1].name}
+            >
+          </div>
+        {:else}
+          <img 
+            src={deck.commanders[0].faces?.[0]?.art_crop}
+            alt={deck.commanders[0].name}
+          >
+        {/if}
       {/if}
     </button>
   {/each}
@@ -123,7 +130,7 @@ const handleCardClick = (card) => {
         {enchantments}
         {lands}
         showCardPreview={handleHover}
-        rotateCard={rotateCard}
+        {rotateCard}
         {handleCardClick}
       />
     </div>
@@ -142,11 +149,11 @@ const handleCardClick = (card) => {
     <button 
       class="mobile-card-overlay" 
       role="dialog"
-      onclick={() => activeMobileCard = null}
+      onclick={() => {activeMobileCard = null; mobileFlip = 0;}}
     >
       <div class="modal-content">
         <img 
-          src={activeMobileCard.faces?.[0]?.large} 
+          src={activeMobileCard.faces?.[mobileFlip]?.large} 
           alt={activeMobileCard.name} 
         />
         <p class="tap-close-hint">Tap anywhere to close</p>
@@ -159,6 +166,27 @@ const handleCardClick = (card) => {
   #magic-nav {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    max-height: 340px;
+    width: 1050px;
+    overflow-x: scroll;
+    display: grid;
+    
+    grid-template-rows: repeat(2, 1fr);
+    
+    grid-auto-flow: column;
+    grid-auto-columns: max-content; 
+    
+    overflow-x: auto;
+    overflow-y: hidden;
+    
+    gap: 10px;
+    padding: 10px 0;
+    
+    -webkit-overflow-scrolling: touch;
+
+    /* Firefox support */
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    scrollbar-width: thin;
     
     .image-button {
       background: none;
@@ -170,11 +198,30 @@ const handleCardClick = (card) => {
       overflow: hidden;
 
       img {
-        width: 100%;//150px;
-        height: 100%;//110px;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
       }
     }
+  }
+
+  /* Chrome, Edge, and Safari support */
+  #magic-nav::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  #magic-nav::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  #magic-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15); 
+    border-radius: 10px;
+    transition: background 0.2s ease;
+  }
+
+  #magic-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3); 
   }
 
   #magic-view {
