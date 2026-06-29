@@ -369,7 +369,7 @@ const formatMainName = (name) => {
   }
 
   hr {
-    width: 100%; \
+    width: 100%;
     border: 0;
     border-top: 1px solid #660033;
     margin: 6px 0 10px 0;
