@@ -71,7 +71,6 @@ export const load = async ({ setHeaders }) => {
       `);
 
       const queryParams = nameArray.flatMap(name => [name, `${name} //%`])
-
       const rows = bulkStatement.all(...queryParams);
 
       rows.forEach(row => {

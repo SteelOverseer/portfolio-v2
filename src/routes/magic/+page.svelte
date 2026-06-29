@@ -26,8 +26,21 @@ import DeckList from "./DeckList.svelte";
 let { data } = $props();
 
 const decks = $derived([...(data.decks || [])].sort((a, b) => a.deckName.localeCompare(b.deckName)))
+
 let selectedDeck = $state(null)
 let hoveredCard = $state(null);
+let cardPreview = $state(null)
+let flipped = $state(false)
+let activeMobileCard = $state(null);
+
+let commanders = $derived(selectedDeck?.commanders || null);  
+let creatures = $derived(selectedDeck ? getCardsByType(selectedDeck.mainboard, 'creature') : []);
+let instants = $derived(selectedDeck ? getCardsByType(selectedDeck.mainboard, 'instant') : []);
+let planeswalkers = $derived(selectedDeck ? getCardsByType(selectedDeck.mainboard, 'planeswalker') : []);
+let sorceries = $derived(selectedDeck ? getCardsByType(selectedDeck.mainboard, 'sorcery') : []);
+let artifacts = $derived(selectedDeck ? getCardsByType(selectedDeck.mainboard, 'artifact').filter(c => !c.type_line.toLowerCase().includes('creature')) : []);
+let enchantments = $derived(selectedDeck ? getCardsByType(selectedDeck.mainboard, 'enchantment').filter(c => !c.type_line.toLowerCase().includes('creature')) : []);
+let lands = $derived(selectedDeck ? getCardsByType(selectedDeck.mainboard, 'land').filter(c => !c.type_line.toLowerCase().includes('creature')) : []);
 
 const getCardsByType = (cards, type) => {
   return cards.filter(card => {
@@ -36,29 +49,61 @@ const getCardsByType = (cards, type) => {
       return
     }
 
-    // some cards have a land on the backside, i dont want them included in the land array
-    if(type == 'land' && card.type_line?.includes('//') && card.type_line?.toLowerCase().includes('land')) {
-      return
-    }
+    const cardTypes = card.type_line?.split(' // ')
+    const cardType = cardTypes[0].toLowerCase()
     
-    return card.type_line?.toLowerCase().includes(type)
+    return cardType.includes(type)
   })
 }
 
-function handleHover(value) {
+const handleHover = (value) => {
   hoveredCard = value;
+  flipped = false
+  cardPreview = hoveredCard.faces[0].large;
 }
+
+const rotateCard = () => {
+  flipped = !flipped
+  
+  if (flipped) {
+    cardPreview = hoveredCard.faces[1].large;
+  }
+  else {
+    cardPreview = hoveredCard.faces[0].large;
+  }
+}
+
+const handleCardClick = (card) => {
+  if (window.innerWidth <= 800) {
+    activeMobileCard = card;
+  }
+}
+
 </script>
 
 <nav id="magic-nav">
   {#each decks as deck}
-    <!-- will need to handle this better for partner commanders -->
     <button class="image-button" onclick={() => selectedDeck = deck} >
       {#if deck.commanders && deck.commanders.length > 0}
+        {#if deck.commanders.length >= 2}
+      <div class="partner-split-container">
         <img 
+          class="partner-primary"
           src={deck.commanders[0].faces?.[0]?.art_crop}
           alt={deck.commanders[0].name}
         >
+        <img 
+          class="partner-secondary"
+          src={deck.commanders[1].faces?.[0]?.art_crop}
+          alt={deck.commanders[1].name}
+        >
+      </div>
+    {:else}
+      <img 
+        src={deck.commanders[0].faces?.[0]?.art_crop}
+        alt={deck.commanders[0].name}
+      >
+    {/if}
       {/if}
     </button>
   {/each}
@@ -67,23 +112,25 @@ function handleHover(value) {
   {#if selectedDeck == null}
     Select a commander to see the decklist!
   {:else}
-    <div id="decklist">
+    <div id="deck-view">
       <DeckList 
-        commander={selectedDeck.commanders[0]}
-        creatures={getCardsByType(selectedDeck.mainboard, 'creature')}
-        instants={getCardsByType(selectedDeck.mainboard, 'instant')}
-        planeswalkers={getCardsByType(selectedDeck.mainboard, 'planeswalker')}
-        sorceries={getCardsByType(selectedDeck.mainboard, 'sorcery')}
-        artifacts={getCardsByType(selectedDeck.mainboard, 'artifact')}
-        enchantments={getCardsByType(selectedDeck.mainboard, 'enchantment')}
-        lands={getCardsByType(selectedDeck.mainboard, 'land')}
+        {commanders}
+        {creatures}
+        {instants}
+        {planeswalkers}
+        {sorceries}
+        {artifacts}
+        {enchantments}
+        {lands}
         showCardPreview={handleHover}
+        rotateCard={rotateCard}
+        {handleCardClick}
       />
     </div>
-    <div id="card-window">
+    <div id="card-window" class="desktop-only">
       {#if hoveredCard}
         <img 
-          src={hoveredCard.faces[0].large}
+          src={cardPreview}
           alt={hoveredCard.name}
         >
       {:else}
@@ -91,27 +138,42 @@ function handleHover(value) {
       {/if}
     </div>
   {/if}
+  {#if activeMobileCard}
+    <button 
+      class="mobile-card-overlay" 
+      role="dialog"
+      onclick={() => activeMobileCard = null}
+    >
+      <div class="modal-content">
+        <img 
+          src={activeMobileCard.faces?.[0]?.large} 
+          alt={activeMobileCard.name} 
+        />
+        <p class="tap-close-hint">Tap anywhere to close</p>
+      </div>
+    </button>
+  {/if}
 </div>
 
 <style lang="scss">
   #magic-nav {
     margin-top: 2rem;
     margin-bottom: 2rem;
-   
-    a:not(:last-child) {
-      margin-right: 5px;
-    }
-
-    img {
-      width: 150px;
-      height: 110px;
-    }
-
+    
     .image-button {
       background: none;
       border: none;
       padding: 0;
       cursor: pointer;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+
+      img {
+        width: 100%;//150px;
+        height: 100%;//110px;
+        object-fit: cover;
+      }
     }
   }
 
@@ -119,23 +181,104 @@ function handleHover(value) {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 100%;
+  }
+
+  #deck-view {
+    width: 65%;
   }
 
   #card-window {
-    width: 50%;
+    width: 35%;
+    position: sticky;
+    top: 2rem;
+    height: auto;
+    align-self: start;
     
     img {
-      width: 400px;
+      width: 100%;
       height: auto;
+      border-radius: 4% / 3%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     }
   }
 
-  @media only screen and (max-width: 750px) {
+  .partner-split-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .partner-primary {
+      z-index: 2;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    .partner-secondary {
+      z-index: 1;
+      transform-origin: center center;
+      transform: scale(1.4) translate(15%, 10%);
+    }
+  }
+
+  .mobile-card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.85); 
+    text-align: inherit;
+    font-family: inherit;
+    padding: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .modal-content {
+      width: 85%;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 4.75% / 3.5%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        animation: zoomIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .tap-close-hint {
+        color: #aaaaaa;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
     #magic-nav {
       width: 22.5rem;
     }
-    #magic-view {     
-      flex-direction: column-reverse;
+    
+    .desktop-only {
+      display: none;
     }
   }
 </style>

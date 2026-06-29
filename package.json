@@ -20,8 +20,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fortawesome/free-solid-svg-icons": "^7.3.0",
 		"@sveltestrap/sveltestrap": "^7.1.0",
 		"better-sqlite3": "^12.11.1",
-		"google-auth-library": "^10.9.0"
+		"google-auth-library": "^10.9.0",
+		"svelte-fa": "^4.0.4"
 	}
 }
