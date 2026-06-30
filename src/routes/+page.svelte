@@ -1,8 +1,33 @@
 <script>
+/**
+  * @typedef {Object} RecentlyPlayedGame
+  * @property {string} appid
+  * @property {string} name
+  * @property {number} playtime_2weeks
+  * @property {number} playtime_forever
+  * @property {string} img_icon_url
+  * @property {string} img_logo_url
+*/
+
+/**
+  * @typedef {Object} OwnedGame
+  * @property {string} appid
+  * @property {string} name
+  * @property {number} playtime_2weeks
+  * @property {number} playtime_forever
+  * @property {string} img_icon_url
+  * @property {string} img_logo_url
+  * @property {boolean} has_community_visible_stats
+*/
+
   let { data } = $props()
-  const allGames = data?.ownedGames.response.games;
-  const topFiveGames = allGames?.sort((a, b) => b.playtime_forever - a.playtime_forever).slice(0,5);
-  const latestGame = data?.recentlyPlayed?.response.games[0]
+  const allGames = $derived(data?.ownedGames.response.games);
+
+  /** @type { OwnedGame[] } */
+  const topFiveGames = $derived(allGames?.sort((a, b) => b.playtime_forever - a.playtime_forever).slice(0,5));
+
+  /** @type { RecentlyPlayedGame } */
+  const latestGame = $derived(data?.recentlyPlayed?.response.games[0])
 </script>
 
 <div id="about">
