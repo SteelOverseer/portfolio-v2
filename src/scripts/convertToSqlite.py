@@ -1,7 +1,11 @@
 import sqlite3
 import json
+import shutil
 
-with open("oracle-cards-20260614210315.json", "r", encoding="utf-8") as file:
+bulkCardFile = input("Enter path for bulk data file:")
+outputPath = input("Enter db file destination:")
+
+with open(bulkCardFile, "r", encoding="utf-8") as file:
   card_data = json.load(file)
 
 connection = sqlite3.connect("scryfallOracleCards.db")
@@ -114,3 +118,6 @@ cursor.execute("""
 connection.commit()
 connection.close()
 print("Database successfully generated")
+print(f"Moving db file to {outputPath}")
+shutil.move("scryfallOracleCards.db", outputPath)
+print("File successfully moved")
