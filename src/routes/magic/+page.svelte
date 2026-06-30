@@ -167,7 +167,7 @@ const handleCardClick = (card) => {
     margin-top: 2rem;
     margin-bottom: 2rem;
     max-height: 340px;
-    width: 1050px;
+    width: 100%;
     overflow-x: scroll;
     display: grid;
     
