@@ -12,7 +12,7 @@
   <ProjectCard
     title={"Time Tracker"}
     url={"https://github.com/SteelOverseer/time-tracker"}
-    technologies="Typescript, React"
+    technologies={["Typescript", "React"]}
     imagePath="{timetracker}"
     alternate={"Image of time tracker app"}
   >
@@ -24,7 +24,7 @@
   <ProjectCard 
     title={"Missing Card Finder"} 
     url={"https://github.com/SteelOverseer/missing-card-finder"}
-    technologies={"Rust"}
+    technologies={["Rust"]}
     imagePath={cardfinderoutput}
     alternate={"Example output"}
   >
@@ -41,7 +41,7 @@
   <ProjectCard 
     title={"Digital Cookbook"}
     url={"https://github.com/SteelOverseer/digital-cookbook"}
-    technologies={"Typescript, Vue, Rust"}
+    technologies={["Typescript", "Vue", "Rust"]}
     imagePath={digitalcookbook}
     alternate={"Image of digital cookbook app"}
   >
@@ -58,7 +58,7 @@
   <ProjectCard
     title={"TUI Game of Life"}
     url={"https://github.com/SteelOverseer/rust_tui_game_of_life"}
-    technologies={"Rust"}
+    technologies={["Rust"]}
     imagePath={gameoflifetui}
     alternate={"Game of life TUI"}
   >
@@ -72,7 +72,7 @@
   <ProjectCard
     title={"Game of Life"}
     url={"https://github.com/SteelOverseer/game_of_life"}
-    technologies={"Rust, WASM"}
+    technologies={["Rust", "WASM"]}
     imagePath={gameoflife}
     alternate={"Game of life"}
   >
