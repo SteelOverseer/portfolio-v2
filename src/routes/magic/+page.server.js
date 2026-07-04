@@ -10,6 +10,11 @@ const authClient = new JWT({
   scopes: ['https://www.googleapis.com/auth/drive.readonly'],
 });
 
+// 1. In-Memory Cache Storage
+let cachedDecks = null;
+let cacheExpiry = 0;
+const CACHE_TTL_MS = 15 * 60 * 1000; // 15 Minutes (Adjust as needed)
+
 export const config = {
   isr: {
     // Expiration time in seconds - 1 day
@@ -24,6 +29,11 @@ function cleanName(name) {
 }
 
 export const load = async ({ setHeaders }) => {
+ if (cachedDecks && Date.now() < cacheExpiry) {
+    setHeaders({ 'cache-control': 'public, max-age=60' });
+    return { decks: cachedDecks };
+  }
+
   try {
     // Authorize the client before making requests
     await authClient.authorize();
@@ -127,14 +137,20 @@ export const load = async ({ setHeaders }) => {
       };
     });
 
+    cachedDecks = completedDecks;
+    cacheExpiry = Date.now() + CACHE_TTL_MS;
+
     setHeaders({
-      'cache-control': 'private, max-age=60'
+      'cache-control': 'public, max-age=60'
     });
 
     return { decks: completedDecks };
 
   } catch (error) {
     console.error('Authenticated Google Drive fetch failed:', error);
-    return { files: [] };
+    if (cachedDecks) {
+      return { decks: cachedDecks, stale: true };
+    }
+    return { decks: {} };
   }
 };
