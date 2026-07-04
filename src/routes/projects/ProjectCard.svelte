@@ -113,10 +113,10 @@
 
     .vertical-divider {
       display: inline-block;
-      width: 4px;               /* Thickness of the line */
-      height: 1.25rem;          /* Tall enough to match the text height */
-      background-color: #660033; /* Your custom accent color */
-      opacity: 0.8;             /* Keeps it clean but legible */
+      width: 4px;               
+      height: 1.25rem;
+      background-color: #660033;
+      opacity: 0.8;
       border-radius: 2px;
       margin: 0 0.25rem;
     }
@@ -141,7 +141,6 @@
     }
   }
 
-  // Two-tone fix for Vue icon
   :global(.vue-icon svg path:first-child) { fill: #35495E; }
   :global(.vue-icon svg path:last-child) { fill: #42B883; }
 
@@ -193,7 +192,6 @@
     }
   }
 
-  /* Responsive styling using a cleaner container logic */
   @media (max-width: 700px) {
     .card-contents {
       grid-template-columns: 1fr;
