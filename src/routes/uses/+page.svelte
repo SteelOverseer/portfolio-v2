@@ -1,9 +1,4 @@
 <div id="uses">
-  <header class="uses-header">
-    <h1>/uses</h1>
-    <p class="subtitle">A document of the hardware, software, and tools I use daily.</p>
-  </header>
-
   <section class="category-section">
     <h2>Hardware</h2>
     <hr />

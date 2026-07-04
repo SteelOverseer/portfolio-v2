@@ -1,7 +1,10 @@
-<script>
+<script lang="ts">
   import Fa from 'svelte-fa';
   import { faTypescript, faReact, faRust, faVuejs } from '@fortawesome/free-brands-svg-icons';
-  import wasmIconPath from '$lib/images/WebAssembly.png'
+  import wasmIconPath from '$lib/images/WebAssembly.png';
+  import type { Snippet } from 'svelte';
+
+  // Svelte 5 Runes with TypeScript definition
   let {
     title,
     url,
@@ -9,134 +12,195 @@
     imagePath,
     alternate,
     children
+  }: {
+    title: string;
+    url: string;
+    technologies: string[];
+    imagePath: any;
+    alternate: string;
+    children?: Snippet;
   } = $props();
-
 </script>
 
 <div class="project-card">
   <div class="title-bar">
-    <h2 style="margin: 0px;">
-      <a href="{url}" target="_blank">
+    <h2>
+      <a href="{url}" target="_blank" rel="noopener noreferrer">
         {title}
       </a>
     </h2> 
-    &nbsp;-
+    <span class="vertical-divider"></span>
     <div class="tech-icons">
       {#each technologies as tech}
-        {#if tech.toLowerCase() == 'typescript'}
+        {#if tech.toLowerCase() === 'typescript'}
           <span class="tech-icon">
-            <Fa 
-              icon={faTypescript}
-              size="lg"
-              color="#3178C6"
-            />
+            <Fa icon={faTypescript} size="lg" color="#3178C6" />
           </span>
-        {:else if tech.toLowerCase() == 'react'}
+        {:else if tech.toLowerCase() === 'react'}
           <span class="tech-icon">
-            <Fa 
-              icon={faReact}
-              size="lg"
-              color="#61DBFB"
-            />
+            <Fa icon={faReact} size="lg" color="#61DBFB" />
           </span>
-        {:else if tech.toLowerCase() == 'rust'}
+        {:else if tech.toLowerCase() === 'rust'}
           <span class="tech-icon">
-            <Fa 
-              icon={faRust}
-              size="lg"
-              color="#D34516"
-            />
+            <Fa icon={faRust} size="lg" color="#D34516" />
           </span>
-        {:else if tech.toLowerCase() == 'vue'}
-          <span class="tech-icon">
-            <Fa 
-              icon={faVuejs}
-              size="lg"
-              primaryColor="#42B883"
-            />
+        {:else if tech.toLowerCase() === 'vue'}
+          <span class="tech-icon vue-icon">
+            <Fa icon={faVuejs} size="lg" />
           </span>
-        {:else if tech.toLowerCase() == 'wasm'}
-          <span class="tech-icon" style="width: 21px; height: 21px">
-            <img
-              src="{wasmIconPath}"
-              alt="WASM"
-              width="21px"
-              height="21px"
-            />
+        {:else if tech.toLowerCase() === 'wasm'}
+          <span class="tech-icon wasm-icon">
+            <img src="{wasmIconPath}" alt="WASM" />
           </span>
         {:else}
-          {tech}
+          <span class="tech-badge">{tech}</span>
         {/if}
       {/each}
     </div>
   </div>
-  <hr>
+  
+  <hr class="card-hr">
+  
   <div class="card-contents">
     <div class="image-container">
-      <enhanced:img class="image" src="{imagePath}" alt="{alternate}" >
+      <enhanced:img class="image" src="{imagePath}" alt="{alternate}" />
     </div>
-    <div>
+    <div class="project-description">
       {@render children?.()}
     </div>
   </div>
 </div>
 
 <style lang="scss">
+  .project-card {
+    background: #1a1a1a;
+    border: 1px solid #262626;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 850px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      border-color: #660033;
+      transform: translateY(-2px);
+    }
+  }
+
   .title-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #ff3399;
+        }
+      }
+    }
+
+    .vertical-divider {
+      display: inline-block;
+      width: 4px;               /* Thickness of the line */
+      height: 1.25rem;          /* Tall enough to match the text height */
+      background-color: #660033; /* Your custom accent color */
+      opacity: 0.8;             /* Keeps it clean but legible */
+      border-radius: 2px;
+      margin: 0 0.25rem;
+    }
   }
 
   .tech-icons {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
   }
 
   .tech-icon {
-    margin-left: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+
+    &.wasm-icon img {
+      width: 21px;
+      height: 21px;
+      object-fit: contain;
+    }
   }
 
-  .project-card {
-    border: 3px solid #660033;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 1rem;
-    width: 75%;
-    box-shadow: #000000 6px 2px 8px 0px;
+  // Two-tone fix for Vue icon
+  :global(.vue-icon svg path:first-child) { fill: #35495E; }
+  :global(.vue-icon svg path:last-child) { fill: #42B883; }
+
+  .tech-badge {
+    background: #262626;
+    color: #b3b3b3;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
   }
+
+  .card-hr {
+    border: none;
+    height: 1px;
+    background: #262626;
+    margin: 1rem 0;
+  }
+
   .card-contents {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1.5rem;
+    align-items: start;
   }
+
   .image-container {
-    margin-right: 5px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #262626;
   }
+
   .image {
-    width: 300px;
+    width: 100%;
     height: 200px;
+    object-fit: cover;
+    display: block;
   }
 
-  @media only screen and (max-width: 650px) {
-    .card-contents {
-      flex-direction: column;
-    }
+  .project-description {
+    color: #b3b3b3;
+    line-height: 1.6;
+    font-size: 1rem;
 
-    .image {
-      width: 280px;
-      height: 200px;
+    :global(p) {
+      margin: 0 0 1rem 0;
+      &:last-child { margin-bottom: 0; }
     }
   }
 
-  @media only screen and (max-width: 400px) {
+  /* Responsive styling using a cleaner container logic */
+  @media (max-width: 700px) {
     .card-contents {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
-
+    
     .image {
-      width: 260px;
-      height: 200px;
+      height: 180px;
     }
   }
 </style>
