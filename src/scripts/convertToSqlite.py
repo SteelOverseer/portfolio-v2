@@ -1,14 +1,24 @@
 import sqlite3
 import json
 import shutil
+import argparse
 
-bulkCardFile = input("Enter path for bulk data file:")
-outputPath = input("Enter db file destination:")
 
-with open(bulkCardFile, "r", encoding="utf-8") as file:
+parser = argparse.ArgumentParser(description="A script to create a sqlite database from a scryfall bulk data file.")
+parser.add_argument("filename", type=str, help="The path to the file to process")
+parser.add_argument("outputLocation", type=str, help="The destination path for the output db file")
+parser.add_argument("-n", "--name", type=str, default="scryfallOracleCards", help="Name of the output db file")
+
+args = parser.parse_args()
+
+fullDBName = args.name + ".db"
+
+print(f"Processing {args.filename}...")
+
+with open(args.filename, "r", encoding="utf-8") as file:
   card_data = json.load(file)
 
-connection = sqlite3.connect("scryfallOracleCards.db")
+connection = sqlite3.connect(fullDBName)
 cursor = connection.cursor()
 
 cursor.execute("PRAGMA foreign_keys = ON;")
@@ -118,6 +128,6 @@ cursor.execute("""
 connection.commit()
 connection.close()
 print("Database successfully generated")
-print(f"Moving db file to {outputPath}")
-shutil.move("scryfallOracleCards.db", outputPath)
+print(f"Moving db file to {args.outputLocation}")
+shutil.move(fullDBName, args.outputLocation + "/" + fullDBName)
 print("File successfully moved")

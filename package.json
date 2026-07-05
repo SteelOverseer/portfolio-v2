@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"build-db": "python3 ./src/scripts/convertToSqlite.py /home/dschultz/Development/portfolio-v2/src/lib/local_data/oracle-cards-20260614210315.json /home/dschultz/Development/portfolio-v2/src/lib/data"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
