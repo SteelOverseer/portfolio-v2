@@ -39,7 +39,7 @@
       I'm a full-stack software engineer that enjoys building cool things and bringing value to my end users.
       <br><br>
       Currently, I balance a full-time role engineering robust, high-performance billing software with targeted contract development, 
-      helping build out the technical foundation and scalable solutions for <a href="https://roctechworks.com/#/" target="_blank" rel="noopener noreferrer">RocTechWorks</a>.
+      helping build out the technical foundation and scalable solutions for <a class="beam-link beam-hover" href="https://roctechworks.com/#/" target="_blank" rel="noopener noreferrer">RocTechWorks</a>.
     </p>
 
     <h3>The Fun Stuff</h3>

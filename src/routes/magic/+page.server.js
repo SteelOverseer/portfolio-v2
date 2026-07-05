@@ -5,15 +5,13 @@ import { PRIVATE_GOOGLE_CLIENT_EMAIL, PRIVATE_GOOGLE_PRIVATE_KEY, FOLDER_ID } fr
 // Initialize the authenticated Google Service Account client
 const authClient = new JWT({
   email: PRIVATE_GOOGLE_CLIENT_EMAIL,
-  // Google private keys use literal escaped newlines (\n), this replace fix ensures Node parses them flawlessly
   key: PRIVATE_GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
   scopes: ['https://www.googleapis.com/auth/drive.readonly'],
 });
 
-// 1. In-Memory Cache Storage
 let cachedDecks = null;
 let cacheExpiry = 0;
-const CACHE_TTL_MS = 15 * 60 * 1000; // 15 Minutes (Adjust as needed)
+const CACHE_TTL_MS = 30 * 60 * 1000; // 30 Minutes (Adjust as needed)
 
 export const config = {
   isr: {
@@ -35,7 +33,6 @@ export const load = async ({ setHeaders }) => {
   }
 
   try {
-    // Authorize the client before making requests
     await authClient.authorize();
 
     // 1. Get the list of files from the folder

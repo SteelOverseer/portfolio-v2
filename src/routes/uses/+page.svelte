@@ -8,7 +8,7 @@
         <h3>Development Machine</h3>
         <p>
           While working on my own projects or contributing to my friends startup I use a 
-          <a href="https://system76.com/laptops/lemur" target="_blank" rel="noopener noreferrer">
+          <a class="beam-link beam-hover" href="https://system76.com/laptops/lemur" target="_blank" rel="noopener noreferrer">
             System76 Lemur Pro
           </a>.
         </p>
@@ -22,14 +22,14 @@
         <h3>Development Peripherals</h3>
         <p>
           While at my desk, I like to use my
-          <a href="https://dygma.com/pages/defy" target="_blank" rel="noopener noreferrer">
+          <a class="beam-link beam-hover" href="https://dygma.com/pages/defy" target="_blank" rel="noopener noreferrer">
             Dygma Defy
           </a> split keyboard, running tactile Cherry MX Brown switches. 
           They make for a very comfortable typing experience, I would recommend giving split keyboards a try!
         </p>
         <p>
           <br>
-          I also use a <a href="https://www.amazon.com/dp/B0CX18LHWS?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1&th=1" target="_blank" rel="noopener noreferrer">verticle mouse</a>, doubling down on the ergonomics.
+          I also use a <a class="beam-link beam-hover" href="https://www.amazon.com/dp/B0CX18LHWS?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1&th=1" target="_blank" rel="noopener noreferrer">verticle mouse</a>, doubling down on the ergonomics.
         </p>
       </div>
 
@@ -56,11 +56,11 @@
           the red switches to be more friendly on my fingers.
         </p>
         <p>
-          My mouse is a <a href="https://www.amazon.com/dp/B07L4BM851?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1" target="_blank" rel="noopener noreferrer">Logitech Gaming mouse</a>
+          My mouse is a <a class="beam-link beam-hover" href="https://www.amazon.com/dp/B07L4BM851?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1" target="_blank" rel="noopener noreferrer">Logitech Gaming mouse</a>
           for custom configuration per game and plenty of buttons.
         </p>
         <p>
-          My headset is also <a href="https://www.amazon.com/dp/B081415GCS?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1" target="_blank" rel="noopener noreferrer">Logitech</a>, just to stay on brand.
+          My headset is also <a class="beam-link beam-hover" href="https://www.amazon.com/dp/B081415GCS?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1" target="_blank" rel="noopener noreferrer">Logitech</a>, just to stay on brand.
         </p>
       </div>
     </div>
@@ -74,7 +74,7 @@
       <div class="os-banner">
         <p>
           My development environment runs on Linux, specifically 
-          <a href="https://pop.system76.com/" target="_blank" rel="noopener noreferrer">Pop!_OS</a>.
+          <a class="beam-link beam-hover" href="https://pop.system76.com/" target="_blank" rel="noopener noreferrer">Pop!_OS</a>.
         </p>
       </div>
 
@@ -83,7 +83,7 @@
           <h3>Editor</h3>
           <p>
             <strong>Visual Studio Code</strong>, customized with extensions for the various programming languages I use.
-            I found <a href="https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer" target="_blank" rel="noopener noreferrer">this extension</a> for sqlite
+            I found <a class="beam-link beam-hover" href="https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer" target="_blank" rel="noopener noreferrer">this extension</a> for sqlite
             particulary useful building this site.
           </p>
         </div>
@@ -91,10 +91,10 @@
         <div class="uses-card">
           <h3>Terminal &amp; Shell</h3>
           <p>
-            I found <a href="https://wezfurlong.org/wezterm/index.html" target="_blank" rel="noopener noreferrer">Wezterm</a> 
+            I found <a class="beam-link beam-hover" href="https://wezfurlong.org/wezterm/index.html" target="_blank" rel="noopener noreferrer">Wezterm</a> 
             looking for a terminal with tabs or split views. It's been very useful with projects that need multiple sources running.
             <br>
-            I customized wezterm with the <a href="https://starship.rs/" target="_blank" rel="noopener noreferrer">Starship</a> prompt.
+            I customized wezterm with the <a class="beam-link beam-hover" href="https://starship.rs/" target="_blank" rel="noopener noreferrer">Starship</a> prompt.
           </p>
         </div>
 
@@ -103,7 +103,7 @@
           <p>
             Dark mode <i>everywhere</i>.
             <br>
-            I am currently enjoying the <a href="https://catppuccin.com/" target="_blank" rel="noopener noreferrer">Catppuccin Mocha</a> theme, which I applied to both VS Code and Wezterm.
+            I am currently enjoying the <a class="beam-link beam-hover" href="https://catppuccin.com/" target="_blank" rel="noopener noreferrer">Catppuccin Mocha</a> theme, which I applied to both VS Code and Wezterm.
           </p>
         </div>
       </div>
@@ -167,7 +167,6 @@
   .uses-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 12px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -194,18 +193,6 @@
       line-height: 1.6;
       color: var(--text-muted);
     }
-
-    a {
-      color: #ff3399;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-      
-      &:hover {
-        color: #ff66b2;
-        text-decoration: underline;
-      }
-    }
   }
 
   .wide-card {
@@ -216,7 +203,6 @@
     margin-top: 1rem;
     background: #0d0d0d;
     border: 1px solid var(--border);
-    border-radius: 6px;
     padding: 0.75rem;
     font-size: 0.9rem;
 
@@ -255,19 +241,12 @@
     background: rgba(102, 0, 51, 0.15);
     border: 1px solid var(--accent);
     padding: 1rem 1.25rem;
-    border-radius: 12px;
     margin-bottom: 1.5rem;
     
     p {
       margin: 0;
       font-size: 1.05rem;
       color: var(--text-main);
-    }
-    
-    a {
-      color: #ff3399;
-      text-decoration: none;
-      font-weight: bold;
     }
   }
 

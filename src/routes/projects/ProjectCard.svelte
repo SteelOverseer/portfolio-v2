@@ -25,7 +25,7 @@
 <div class="project-card">
   <div class="title-bar">
     <h2>
-      <a href="{url}" target="_blank" rel="noopener noreferrer">
+      <a class="beam-hover" href="{url}" target="_blank" rel="noopener noreferrer">
         {title}
       </a>
     </h2> 
@@ -77,7 +77,6 @@
     border: 1px solid #262626;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    border-radius: 12px;
     width: 100%;
     max-width: 850px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -99,15 +98,9 @@
     h2 {
       margin: 0;
       font-size: 1.5rem;
-      
+
       a {
-        color: #ffffff;
         text-decoration: none;
-        transition: color 0.2s ease;
-        
-        &:hover {
-          color: #ff3399;
-        }
       }
     }
 

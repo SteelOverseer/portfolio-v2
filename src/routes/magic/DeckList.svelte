@@ -410,7 +410,7 @@ const formatMainName = (name) => {
     cursor: pointer;
     text-align: left;
     overflow: hidden;
-    transition: padding 0.15s ease-in-out;
+    transition: padding 0s ease-in-out;
     display: flex;
     flex-direction: row;
 
@@ -444,12 +444,12 @@ const formatMainName = (name) => {
     justify-content: center;
     opacity: 0.3;
     border-radius: 4px;
-    transition: all 0.15s ease-in-out;
+    transition: all 0s ease-in-out;
 
     &:hover {
       opacity: 1 !important;
       background-color: rgba(255, 255, 255, 0.15);
-      color: #ff0066;
+      color: #00cc44;
     }
   }
 
