@@ -73,7 +73,8 @@
     <div class="software-container">
       <div class="os-banner">
         <p>
-          My development environment runs on Linux, specifically 
+          My development environment runs on Linux. 
+          Currently I'm running <a class="beam-link beam-hover" href="https://omarchy.org/" target="_blank" rel="noopener noreferrer">Omarchy</a>, having recently switched over from 
           <a class="beam-link beam-hover" href="https://pop.system76.com/" target="_blank" rel="noopener noreferrer">Pop!_OS</a>.
         </p>
       </div>
