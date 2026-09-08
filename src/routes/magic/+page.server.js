@@ -50,18 +50,25 @@ export const load = async () => {
   const allCards = {};
 
   if (nameArray.length > 0) {
-    // Dynamically build a bulk parameters placeholder list (?, ?, ?)
-    const conditions = nameArray.map(() => `(cards.name = ? OR cards.name LIKE ?)`).join(' OR ');
+    // A flat IN (...) list stays constant-depth no matter how many names it holds,
+    // unlike a chain of N OR'd comparisons which can exceed SQLite's expression-depth limit.
+    const placeholders = nameArray.map(() => '?').join(', ');
 
     const bulkStatement = db.prepare(`
       SELECT cards.name, cards.type_line, card_images.art_crop, card_images.large
       FROM cards
       INNER JOIN card_images ON cards.id = card_images.card_id
       WHERE cards.layout != 'art_series'
-        AND (${conditions})
+        AND (
+          cards.name IN (${placeholders})
+          OR (
+            instr(cards.name, ' // ') > 0
+            AND substr(cards.name, 1, instr(cards.name, ' // ') - 1) IN (${placeholders})
+          )
+        )
     `);
 
-    const queryParams = nameArray.flatMap(name => [name, `${name} //%`])
+    const queryParams = [...nameArray, ...nameArray];
     const rows = bulkStatement.all(...queryParams);
 
     rows.forEach(row => {
