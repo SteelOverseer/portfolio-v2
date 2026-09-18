@@ -10,13 +10,15 @@
     url,
     technologies,
     imagePath,
+    videoPath,
     alternate,
     children
   }: {
     title: string;
     url: string;
     technologies: string[];
-    imagePath: any;
+    imagePath?: any;
+    videoPath?: string;
     alternate: string;
     children?: Snippet;
   } = $props();
@@ -63,7 +65,11 @@
   
   <div class="card-contents">
     <div class="image-container">
-      <enhanced:img class="image" src="{imagePath}" alt="{alternate}" />
+      {#if videoPath}
+        <video class="image" src="{videoPath}" aria-label="{alternate}" autoplay muted loop playsinline></video>
+      {:else}
+        <enhanced:img class="image" src="{imagePath}" alt="{alternate}" />
+      {/if}
     </div>
     <div class="project-description">
       {@render children?.()}

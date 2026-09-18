@@ -1,10 +1,35 @@
 <script lang="ts">
   import ProjectCard from "./ProjectCard.svelte";
+  import Fa from 'svelte-fa';
+  import { faWindows, faApple, faLinux } from '@fortawesome/free-brands-svg-icons';
   import timetracker from '$lib/images/timetracker.webp?enhanced';
   import digitalcookbook from '$lib/images/digitalcookbook_v1.webp?enhanced';
   import cardfinderoutput from '$lib/images/cardfinderoutput.webp?enhanced';
   import gameoflife from '$lib/images/gameoflife.webp?enhanced';
-  import gameoflifetui from '$lib/images/gameoflifetui.webp?enhanced';
+
+  type DetectedOs = 'windows' | 'mac' | 'linux';
+
+  const GOL_RELEASE_BASE = 'https://github.com/SteelOverseer/rust_tui_game_of_life/releases/latest/download';
+  const gameOfLifeDownloads = {
+    windows: { url: `${GOL_RELEASE_BASE}/game-of-life-windows-x86_64.exe`, label: 'Windows', icon: faWindows },
+    mac: { url: `${GOL_RELEASE_BASE}/game-of-life-macos-x86_64`, label: 'macOS', icon: faApple },
+    linux: { url: `${GOL_RELEASE_BASE}/game-of-life-linux-x86_64`, label: 'Linux', icon: faLinux },
+  };
+
+  let detectedOs: DetectedOs | null = $state(null);
+
+  $effect(() => {
+    const ua = navigator.userAgent;
+    if (/Android|Mobile|iPhone|iPad/i.test(ua)) {
+      detectedOs = null;
+    } else if (/Win/i.test(ua)) {
+      detectedOs = 'windows';
+    } else if (/Mac/i.test(ua)) {
+      detectedOs = 'mac';
+    } else if (/Linux/i.test(ua)) {
+      detectedOs = 'linux';
+    }
+  });
 </script>
 
 <div id="projects">
@@ -47,11 +72,18 @@
       title="TUI Game of Life"
       url="https://github.com/SteelOverseer/rust_tui_game_of_life"
       technologies={["Rust"]}
-      imagePath={gameoflifetui}
+      videoPath="/videos/gameoflifetui.mp4"
       alternate="Game of life TUI interface loop"
     >
       <p>I wanted to explore building modern Terminal User Interfaces (TUIs) and had a recent interest in Conway's Game of Life.</p>
       <p>This implementation runs safely inside standard terminal emulators and runs an animated preview using basic blinker pattern.</p>
+      {#if detectedOs}
+        {@const download = gameOfLifeDownloads[detectedOs]}
+        <a class="download-button" href={download.url} download>
+          <Fa icon={download.icon} />
+          Download for {download.label}
+        </a>
+      {/if}
     </ProjectCard>
 
     <ProjectCard
@@ -95,5 +127,23 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+  }
+
+  .download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #660033;
+    border-radius: 6px;
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      background-color: #660033;
+    }
   }
 </style>
