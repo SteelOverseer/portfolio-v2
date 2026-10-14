@@ -21,13 +21,11 @@
 */
 
   let { data } = $props()
-  const allGames = $derived(data?.ownedGames.response.games);
-
   /** @type { OwnedGame[] } */
-  const topFiveGames = $derived(allGames?.sort((a, b) => b.playtime_forever - a.playtime_forever).slice(0,5));
+  const topFiveGames = $derived([...(data?.ownedGames ?? [])].sort((a, b) => b.playtime_forever - a.playtime_forever).slice(0,5));
 
-  /** @type { RecentlyPlayedGame } */
-  const latestGame = $derived(data?.recentlyPlayed?.response.games[0])
+  /** @type { RecentlyPlayedGame | undefined } */
+  const latestGame = $derived(data?.recentlyPlayed?.[0])
 </script>
 
 <div id="about">
@@ -70,7 +68,11 @@
         <p>
           <em>Destiny 2</em> used to be my daily driver, but lately I've been branching out more into new titles.
         </p>
-        Currently I'm playing:
+        {#if latestGame}
+          Currently I'm playing:
+        {:else}
+          However, it looks like I've been too busy {data.busyPhrase} to pick up a game lately.
+        {/if}
       </span>
       {#if latestGame}
         <div class="steam-game">

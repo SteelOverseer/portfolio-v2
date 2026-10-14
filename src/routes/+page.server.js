@@ -1,25 +1,45 @@
-import { error } from '@sveltejs/kit';
 import { STEAM_API_KEY, STEAM_USER_ID } from '$env/static/private';
 
-export const load = async ({ params }) => {
-  const getUserDataURL = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${STEAM_API_KEY}&steamids=${STEAM_USER_ID}`
+/**
+ * Fetches a Steam endpoint and returns its `response.games` array,
+ * or an empty array if the request fails or Steam omits `games`.
+ * @param {string} url
+ */
+const fetchGames = async (url) => {
+  try {
+    const resp = await fetch(url)
+    if (!resp.ok) {
+      console.error(`Steam API request failed: ${resp.status} ${resp.statusText}`)
+      return []
+    }
+    const json = await resp.json()
+    return json?.response?.games ?? []
+  } catch (err) {
+    console.error('Steam API request error:', err instanceof Error ? err.message : err)
+    return []
+  }
+}
+
+// Fills in "too busy ___ to pick up a game lately" when nothing was played recently
+const busyPhrases = [
+  'building decks',
+  'playing Magic',
+  'being a girl dad',
+  'petting cats',
+  'tinkering with side projects',
+  'tweaking my Omarchy setup'
+]
+
+export const load = async () => {
   const getOwnedGamesURL = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_USER_ID}&format=json&include_appinfo=true`
   const getRecentlyPlayedURL = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_USER_ID}&format=json&count=1`
 
-  const [ownedGamesResp, recentlyPlayedResp] = await Promise.all([
-    fetch(getOwnedGamesURL),
-    fetch(getRecentlyPlayedURL)
+  const [ownedGames, recentlyPlayed] = await Promise.all([
+    fetchGames(getOwnedGamesURL),
+    fetchGames(getRecentlyPlayedURL)
   ])
 
-  let data = { ownedGames: {}, recentlyPlayed: {}}
+  const busyPhrase = busyPhrases[Math.floor(Math.random() * busyPhrases.length)]
 
-  if(ownedGamesResp.ok) {
-    data.ownedGames = await ownedGamesResp.json()
-  }
-
-  if(recentlyPlayedResp.ok) {
-    data.recentlyPlayed = await recentlyPlayedResp.json()
-  }
-
-  return data
+  return { ownedGames, recentlyPlayed, busyPhrase }
 };
