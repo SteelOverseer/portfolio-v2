@@ -6,6 +6,7 @@
   import digitalcookbook from '$lib/images/digitalcookbook_v1.webp?enhanced';
   import cardfinderoutput from '$lib/images/cardfinderoutput.webp?enhanced';
   import gameoflife from '$lib/images/gameoflife.webp?enhanced';
+  import masterDexTracker from '$lib/images/masterDexTracker.webp?enhanced';
 
   type DetectedOs = 'windows' | 'mac' | 'linux';
 
@@ -94,6 +95,17 @@
       alternate="Game of life browser layout"
     >
       <p>Using Rust and the Leptos web framework to build a high-performance Game of Life execution engine targeting WebAssembly directly in the browser.</p>
+    </ProjectCard>
+
+    <ProjectCard
+      title="Master Dex Tracker"
+      url="https://github.com/SteelOverseer/master-dex-tracker"
+      technologies={["React", "Typescript"]}
+      imagePath={masterDexTracker}
+      alternate="Master Dex Tracker UI"
+      imagePosition="left"
+    >
+      <p>A tool I built with Claude to track a passion project of mine: collecting one card of every Pokémon in its original printing to complete a master Pokédex.</p>
     </ProjectCard>
   </div>
 </div>

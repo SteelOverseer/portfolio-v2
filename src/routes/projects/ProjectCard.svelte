@@ -12,6 +12,7 @@
     imagePath,
     videoPath,
     alternate,
+    imagePosition,
     children
   }: {
     title: string;
@@ -20,6 +21,7 @@
     imagePath?: any;
     videoPath?: string;
     alternate: string;
+    imagePosition?: string;
     children?: Snippet;
   } = $props();
 </script>
@@ -68,7 +70,7 @@
       {#if videoPath}
         <video class="image" src="{videoPath}" aria-label="{alternate}" autoplay muted loop playsinline></video>
       {:else}
-        <enhanced:img class="image" src="{imagePath}" alt="{alternate}" />
+        <enhanced:img class="image" src="{imagePath}" alt="{alternate}" style:object-position={imagePosition} />
       {/if}
     </div>
     <div class="project-description">
