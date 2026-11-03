@@ -84,9 +84,9 @@
     background: #1a1a1a;
     border: 1px solid #262626;
     padding: 1.5rem;
-    margin-bottom: 2rem;
     width: 100%;
-    max-width: 850px;
+    box-sizing: border-box;
+    container-type: inline-size;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     transition: border-color 0.2s ease, transform 0.2s ease;
 
@@ -193,11 +193,13 @@
     }
   }
 
-  @media (max-width: 700px) {
+  @container (max-width: 640px) {
     .card-contents {
       grid-template-columns: 1fr;
     }
-    
+  }
+
+  @media (max-width: 700px) {
     .image {
       height: 180px;
     }

@@ -34,16 +34,16 @@
 </script>
 
 <div id="projects">
-  <div class="cards-container">
+  <div class="cards-container">    
     <ProjectCard
-      title="Time Tracker"
-      url="https://github.com/SteelOverseer/time-tracker"
-      technologies={["Typescript", "React"]}
-      imagePath={timetracker}
-      alternate="Image of time tracker app"
+      title="Master Dex Tracker"
+      url="https://github.com/SteelOverseer/master-dex-tracker"
+      technologies={["React", "Typescript"]}
+      imagePath={masterDexTracker}
+      alternate="Master Dex Tracker UI"
+      imagePosition="left"
     >
-      <p>A project I worked on to familiarize myself with React.</p>
-      <p>I have a need to track my time for contracting work which gave me the idea.</p>
+      <p>A tool I built with Claude to track a passion project of mine: collecting one card of every Pokémon in its original printing to complete a master Pokédex.</p>
     </ProjectCard>
 
     <ProjectCard 
@@ -98,21 +98,24 @@
     </ProjectCard>
 
     <ProjectCard
-      title="Master Dex Tracker"
-      url="https://github.com/SteelOverseer/master-dex-tracker"
-      technologies={["React", "Typescript"]}
-      imagePath={masterDexTracker}
-      alternate="Master Dex Tracker UI"
-      imagePosition="left"
+      title="Time Tracker"
+      url="https://github.com/SteelOverseer/time-tracker"
+      technologies={["Typescript", "React"]}
+      imagePath={timetracker}
+      alternate="Image of time tracker app"
     >
-      <p>A tool I built with Claude to track a passion project of mine: collecting one card of every Pokémon in its original printing to complete a master Pokédex.</p>
+      <p>A project I worked on to familiarize myself with React.</p>
+      <p>I have a need to track my time for contracting work which gave me the idea.</p>
     </ProjectCard>
+    
   </div>
 </div>
 
 <style lang="scss">
   #projects {
-    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
     color: #ffffff;
@@ -135,9 +138,10 @@
   }
 
   .cards-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
+    gap: 2rem;
+    align-items: stretch;
     width: 100%;
   }
 
